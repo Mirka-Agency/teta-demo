@@ -50,19 +50,21 @@ h6 {
 }
 
 h1 {
+  font-size: 1.375rem;
+  font-weight: var(--font-weight-bold);
+  line-height: 2rem;
+}
+
+h2 {
   font-size: 1.25rem;
   font-weight: var(--font-weight-bold);
   line-height: 1.875rem;
 }
 
-h2 {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
 h3 {
-  font-size: 1.125rem;
-  line-height: 1.6rem;
+  font-size: 1.1875rem;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.75rem;
 }
 
 p {
@@ -113,25 +115,25 @@ body.is-locked {
 
 @media (min-width: 768px) {
   h1 {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-
-  h2 {
-    font-size: 1.375rem;
-    line-height: 2.3rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  h1 {
-    font-size: 2.125rem;
-    line-height: 2.5rem;
+    font-size: 1.625rem;
+    line-height: 2.25rem;
   }
 
   h2 {
     font-size: 1.5rem;
     line-height: 2.4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    line-height: 2.6rem;
   }
 
   .container {

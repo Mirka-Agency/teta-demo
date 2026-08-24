@@ -206,12 +206,18 @@
         </div>
       </section>
 
-      <div class="marquee marquee--with-art" aria-hidden="true">
-        <div class="marquee__row">
-          <span>POWER</span><span>SPEED</span><span>POWER</span><span>SPEED</span>
-          <span>POWER</span><span>SPEED</span><span>POWER</span><span>SPEED</span>
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__bar">
+          <span class="marquee__item">POWER</span>
+          <span class="marquee__bolt"></span>
+          <span class="marquee__item">SPEED</span>
+          <span class="marquee__bolt"></span>
+          <span class="marquee__item">POWER</span>
+          <span class="marquee__bolt"></span>
+          <span class="marquee__item">SPEED</span>
+          <span class="marquee__bolt"></span>
+          <span class="marquee__item">POWER</span>
         </div>
-        <img class="marquee__art" src="assets/hero/about.png" alt="">
       </div>
 
       <section class="about" id="about">
@@ -248,12 +254,30 @@
       </section>
 
       <section class="promo-banner" aria-label="معرفی مجموعه تتا">
-        <div class="container promo-banner__copy">
-          <p class="promo-banner__kicker">مرکز واردات و توزیع قطعات تهویه خودروهای ایرانی و خارجی</p>
-          <h2 class="promo-banner__title">ارائه‌کننده انواع قطعات سیستم تهویه خودرو با تضمین کیفیت</h2>
-          <p class="promo-banner__year">1867</p>
+        <div class="container">
+          <div class="promo-banner__panel">
+            <svg class="promo-banner__curve" viewBox="0 0 75 82" aria-hidden="true" focusable="false">
+              <path fill="currentColor" fill-rule="evenodd" d="M2.26183 0.569805C42.4929 8.57232 66.8041 41.0889 74.4559 79.7284C74.7472 81.2478 76.226 82.2495 77.7496 81.9456C79.2621 81.6417 80.2479 80.1561 79.9454 78.6366C71.8566 37.7349 45.9214 3.5188 3.34879 -4.94518C1.82514 -5.24907 0.357025 -4.25865 0.0545359 -2.73919C-0.247954 -1.20847 0.738179 0.265912 2.26183 0.569805Z"/>
+            </svg>
+            <div class="promo-banner__copy">
+              <h2 class="promo-banner__title">مرکز واردات و توزیع قطعات تهویه خودروهای ایرانی و خارجی</h2>
+              <div class="promo-banner__meta">
+                <p class="promo-banner__subtitle">ارائه‌کننده انواع قطعات سیستم تهویه خودرو با تضمین کیفیت</p>
+                <a class="promo-banner__shop" href="#products">
+                  <span>مشاهده فروشگاه</span>
+                  <svg width="44" height="20" viewBox="0 0 44 33" aria-hidden="true" focusable="false">
+                    <circle opacity="0.2" cx="16" cy="16.126" r="16"></circle>
+                    <path d="M44 15.1259H10.414L15.707 9.83294L14.293 8.41895L6.586 16.1259L14.293 23.8329L15.707 22.4189L10.414 17.1259H44V15.1259Z"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="promo-banner__media">
+              <p class="promo-banner__year" aria-hidden="true">1867</p>
+              <img class="promo-banner__image" src="assets/hero/banner.png" alt="کمپرسور، کندانسور و شیلنگ‌های سیستم تهویه خودرو">
+            </div>
+          </div>
         </div>
-        <img class="promo-banner__image" src="assets/hero/banner.png" alt="نمایش قطعات تهویه خودرو">
       </section>
 
       <section class="products-rail" aria-labelledby="bestseller-title">
@@ -272,10 +296,17 @@
         </div>
       </section>
 
-      <div class="marquee" aria-hidden="true">
-        <div class="marquee__row">
-          <span>POWER</span><span>SPEED</span><span>POWER</span><span>SPEED</span>
-          <span>POWER</span><span>SPEED</span><span>POWER</span><span>SPEED</span>
+      <div class="marquee marquee--reverse" aria-hidden="true">
+        <div class="marquee__bar">
+          <span class="marquee__item">POWER</span>
+          <span class="marquee__bolt"></span>
+          <span class="marquee__item">SPEED</span>
+          <span class="marquee__bolt"></span>
+          <span class="marquee__item">POWER</span>
+          <span class="marquee__bolt"></span>
+          <span class="marquee__item">SPEED</span>
+          <span class="marquee__bolt"></span>
+          <span class="marquee__item">POWER</span>
         </div>
       </div>
 
@@ -375,33 +406,31 @@
 
       <section class="inquiry" id="inquiry">
         <div class="container">
-          <div class="inquiry__panel">
-            <div class="section-head section-head--dark">
-              <div class="section-head__title-wrap">
-                <span class="section-head__icon" aria-hidden="true"><i class="bi bi-clipboard2-pulse"></i></span>
-                <h2>سفارش و استعلام قیمت محصولات</h2>
-              </div>
+          <div class="inquiry__shell">
+            <div class="inquiry__head">
+              <span class="inquiry__icon" aria-hidden="true"><i class="bi bi-clipboard2-pulse"></i></span>
+              <h2>سفارش و استعلام قیمت محصولات</h2>
             </div>
             <form class="inquiry__form" data-inquiry-form>
-              <div class="field-input field-input--company">
+              <div class="inquiry__field inquiry__field--company">
                 <label class="visually-hidden" for="inquiry-company">نام شرکت</label>
-                <input id="inquiry-company" name="company" type="text" placeholder="نام شرکت" required>
+                <input id="inquiry-company" name="company" type="text" placeholder="نام شرکت" autocomplete="organization" required>
               </div>
-              <div class="field-input field-input--person">
+              <div class="inquiry__field inquiry__field--person">
                 <label class="visually-hidden" for="inquiry-person">نام مسئول خرید</label>
-                <input id="inquiry-person" name="buyer" type="text" placeholder="نام مسئول خرید" required>
+                <input id="inquiry-person" name="buyer" type="text" placeholder="نام مسئول خرید" autocomplete="name" required>
               </div>
-              <div class="field-input field-input--phone">
+              <div class="inquiry__field inquiry__field--phone">
                 <label class="visually-hidden" for="inquiry-phone">شماره تماس</label>
-                <input id="inquiry-phone" name="phone" type="tel" placeholder="شماره تماس" required>
+                <input id="inquiry-phone" name="phone" type="tel" placeholder="شماره تماس" autocomplete="tel" required>
               </div>
-              <div class="field-input field-input--note">
+              <div class="inquiry__field inquiry__field--note">
                 <label class="visually-hidden" for="inquiry-note">توضیحات درخواست</label>
                 <input id="inquiry-note" name="details" type="text" placeholder="توضیحات درخواست" required>
               </div>
-              <button class="primary-button" type="submit">استعلام قیمت</button>
+              <button class="primary-button inquiry__submit" type="submit">استعلام قیمت</button>
+              <p class="form-message" data-form-message role="status"></p>
             </form>
-            <p class="form-message" data-form-message role="status"></p>
           </div>
         </div>
       </section>

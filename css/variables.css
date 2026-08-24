@@ -14,8 +14,8 @@
 
   --font-family-base: "Vazirmatn", "IRANSansX", Tahoma, Arial, sans-serif;
   --font-family-heading: "Vazirmatn", "IRANSansX", Tahoma, Arial, sans-serif;
-  --font-size-body: 0.875rem;
-  --line-height-body: 1.875rem;
+  --font-size-body: 0.9375rem;
+  --line-height-body: 1.75rem;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
@@ -42,7 +42,8 @@
 
 @media (min-width: 1024px) {
   :root {
-    --font-size-body: 0.875rem;
+    --font-size-body: 1rem;
+    --line-height-body: 1.875rem;
     --space-section: 3rem;
     --header-height: 78px;
   }
