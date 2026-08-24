@@ -30,13 +30,13 @@
 
   --container-max: 1344px;
   --space-section: 2rem;
-  --header-height: 72px;
+  --header-height: 76px;
 }
 
 @media (min-width: 768px) {
   :root {
     --space-section: 2.5rem;
-    --header-height: 76px;
+    --header-height: 84px;
   }
 }
 
@@ -45,6 +45,6 @@
     --font-size-body: 1rem;
     --line-height-body: 1.875rem;
     --space-section: 3rem;
-    --header-height: 78px;
+    --header-height: 92px;
   }
 }

@@ -37,24 +37,33 @@
 
         <nav class="site-nav" aria-label="منوی اصلی">
           <ul class="site-nav__list">
-            <li><a class="site-nav__link is-active" href="#hero"><i class="bi bi-house-door" aria-hidden="true"></i>خانه</a></li>
-            <li><a class="site-nav__link" href="#products"><i class="bi bi-shop" aria-hidden="true"></i>فروشگاه</a></li>
-            <li><a class="site-nav__link" href="#news"><i class="bi bi-journal-text" aria-hidden="true"></i>وبلاگ</a></li>
-            <li><a class="site-nav__link" href="#about"><i class="bi bi-info-circle" aria-hidden="true"></i>درباره ما</a></li>
-            <li><a class="site-nav__link" href="#contact"><i class="bi bi-telephone" aria-hidden="true"></i>تماس با ما</a></li>
+            <li><a class="site-nav__link is-active" href="#hero">خانه</a></li>
+            <li><a class="site-nav__link" href="#products">فروشگاه</a></li>
+            <li><a class="site-nav__link" href="#news">وبلاگ</a></li>
+            <li><a class="site-nav__link" href="#about">درباره ما</a></li>
+            <li><a class="site-nav__link" href="#contact">تماس با ما</a></li>
           </ul>
         </nav>
 
         <div class="site-header__actions">
-          <button class="icon-button site-header__search" type="button" data-search-open aria-label="جستجو">
+          <button class="site-header__icon-btn site-header__search" type="button" data-search-open aria-label="جستجو">
             <i class="bi bi-search" aria-hidden="true"></i>
           </button>
-          <a class="ghost-button" href="#inquiry">
-            <i class="bi bi-person" aria-hidden="true"></i>
-            <span class="site-header__account-label">تماس با فروش</span>
+          <a class="site-header__icon-btn site-header__account" href="#account" aria-label="حساب کاربری">
+            <i class="bi bi-person-circle" aria-hidden="true"></i>
+            <span class="site-header__icon-label">حساب</span>
           </a>
-          <a class="icon-button site-header__inquiry" href="#inquiry" aria-label="استعلام قیمت">
-            <i class="bi bi-clipboard-check" aria-hidden="true"></i>
+          <a class="site-header__icon-btn site-header__cart" href="#cart" aria-label="سبد خرید، ۳ کالا">
+            <span class="site-header__icon-wrap">
+              <i class="bi bi-cart3" aria-hidden="true"></i>
+              <span class="site-header__badge">۳</span>
+            </span>
+            <span class="site-header__icon-label">سبد</span>
+          </a>
+          <a class="site-header__support" href="#contact">
+            <i class="bi bi-headset" aria-hidden="true"></i>
+            <span class="site-header__support-short">پشتیبانی</span>
+            <span class="site-header__support-full">تماس با پشتیبانی</span>
           </a>
         </div>
       </div>
@@ -71,6 +80,12 @@
         <a class="mobile-nav__link" href="#news">وبلاگ</a>
         <a class="mobile-nav__link" href="#about">درباره ما</a>
         <a class="mobile-nav__link" href="#contact">تماس با ما</a>
+        <a class="mobile-nav__link" href="#account">حساب کاربری</a>
+        <a class="mobile-nav__link" href="#cart">سبد خرید <span class="site-header__badge site-header__badge--inline">۳</span></a>
+        <a class="site-header__support site-header__support--block" href="#contact">
+          <i class="bi bi-headset" aria-hidden="true"></i>
+          تماس با پشتیبانی
+        </a>
         <a class="primary-button" href="#inquiry">استعلام قیمت</a>
       </div>
     </div>
@@ -95,8 +110,14 @@
             <h1>فروش انواع قطعات کولر و سیستم تهویه خودرو</h1>
             <p class="hero__lead">ارائه کمپرسور، کندانسور، اواپراتور و سایر قطعات تهویه خودرو با تضمین کیفیت، قیمت مناسب و ارسال سریع به سراسر کشور.</p>
             <div class="hero__actions">
-              <a class="primary-button" href="#contact">تماس با ما...</a>
-              <a class="ghost-button" href="#inquiry">استعلام قیمت</a>
+              <a class="hero-button hero-button--primary" href="#contact">
+                <i class="bi bi-telephone" aria-hidden="true"></i>
+                <span>تماس با فروش</span>
+              </a>
+              <a class="hero-button hero-button--ghost" href="#inquiry">
+                <i class="bi bi-clipboard-check" aria-hidden="true"></i>
+                <span>استعلام قیمت</span>
+              </a>
             </div>
           </div>
 

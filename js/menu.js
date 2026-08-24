@@ -25,7 +25,7 @@ export function initMenu() {
   closeBtn?.addEventListener("click", () => setOpen(false));
   backdrop?.addEventListener("click", () => setOpen(false));
 
-  drawer.querySelectorAll(".mobile-nav__link").forEach((link) => {
+  drawer.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => setOpen(false));
   });
 
