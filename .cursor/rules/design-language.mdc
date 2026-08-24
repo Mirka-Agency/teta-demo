@@ -1,0 +1,80 @@
+---
+description: Teta visual language — color tokens, radius, type, and component look-and-feel
+alwaysApply: true
+---
+
+# Design Language
+
+Source: visual system of teta.co.com, mapped to this project's stack.
+Never hardcode brand hex in component CSS. Always use these variable names.
+
+## Color tokens
+
+```css
+:root {
+  --color-primary: #0a105a;
+  --color-secondary: #5078a9;
+  --color-text: #091426;
+  --color-accent: #091426;
+  --color-muted: #555454;
+  --color-white: #ffffff;
+  --color-bg: #f5f5f5;
+  --color-border: #dbdbdb;
+  --color-border-soft: #e1e1e1;
+  --color-overlay: rgba(9, 20, 38, 0.55);
+  --color-blur: rgba(80, 120, 169, 0.3);
+  --color-glass: rgba(217, 217, 217, 0.16);
+}
+```
+
+## Typography
+
+```css
+:root {
+  --font-family-base: "Vazirmatn", "IRANSansX", Tahoma, Arial, sans-serif;
+  --font-family-heading: "Vazirmatn", "IRANSansX", Tahoma, Arial, sans-serif;
+  --font-size-body: 0.875rem;
+  --line-height-body: 1.875rem;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}
+```
+
+Headings use `--font-family-heading` and `--color-accent`. Body copy uses `--font-family-base` and `--color-text`.
+
+## Radius and elevation
+
+```css
+:root {
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --shadow-card: 0 4px 18px rgba(9, 20, 38, 0.06);
+  --shadow-header: 0 2px 12px rgba(9, 20, 38, 0.04);
+}
+```
+
+Buttons: `--radius-md`. Cards and inputs: `--radius-lg` or `--radius-xl`. Product cards: `--radius-xl`.
+
+## Layout
+
+```css
+:root {
+  --container-max: 1344px;
+  --space-section: 3rem;
+  --header-height: 78px;
+}
+```
+
+Page background is `--color-bg`. Surfaces (header, cards, search) are `--color-white`. Primary navy blocks use `--color-primary`. Action blue is `--color-secondary`.
+
+## Component feel
+
+- Header: white bar, 46px logo, icon+label nav, compact icon buttons
+- Product cards: white, 12px radius, image, code, title, compatibility, brand, wholesale CTA
+- Section titles: navy bar, white heading, square icon tile
+- Search: white panel, icon-prefixed selects, secondary search button
+- Footer: white, three contact tiles, link columns, copyright row

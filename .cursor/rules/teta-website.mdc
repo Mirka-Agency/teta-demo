@@ -1,0 +1,207 @@
+---
+description: Teta business identity, stack, RTL, naming, SEO, and implementation rules
+alwaysApply: true
+---
+# Teta Website Rules
+
+Business, product, and engineering rules. Visual language, color tokens, radius, type style, and component look-and-feel live in `design-language.mdc`.
+
+---
+
+# Project Identity
+
+Official website template for **Teta / TETA**.
+
+Business type:
+- Wholesale supplier of automotive cooling and heating parts
+- Products: car AC parts, heater parts, climate control components, related spare parts
+- Audience: businesses, repair shops, wholesalers, professional buyers
+
+Positioning:
+The visitor should immediately understand that Teta is a trusted supplier for automotive AC and heater parts.
+
+---
+
+# Language and Layout (RTL)
+
+The entire website is Persian.
+
+Always use:
+
+```html
+<html lang="fa" dir="rtl">
+```
+
+CSS must support RTL. Prefer logical properties:
+
+- `margin-inline`, `padding-inline`, `inset-inline`
+- `border-start-start-radius`, `border-end-end-radius`
+
+Avoid hardcoded `margin-left`, `margin-right`, `padding-left`, `padding-right`, and physical left/right positioning unless absolutely necessary.
+
+---
+
+# Technology
+
+Preferred:
+- HTML5
+- CSS3
+- Vanilla JavaScript
+
+Allowed:
+- Bootstrap 5
+- Bootstrap Icons
+- Standard CSS libraries
+
+Avoid:
+- Heavy frameworks (React / Vue / Angular unless explicitly requested)
+- Unnecessary dependencies
+
+---
+
+# CSS Implementation
+
+Always use CSS variables named in `design-language.mdc`. Never hardcode brand hex in components.
+
+Font stack (visual rules are in `design-language.mdc`):
+
+```css
+font-family: "Vazirmatn", "IRANSansX", Tahoma, Arial, sans-serif;
+```
+
+---
+
+# Required Components
+
+Build reusable pieces with independent styling and minimal JavaScript:
+
+- Header
+- Mobile menu
+- Hero section
+- Product cards
+- Category cards
+- Brand/logo section
+- Search component
+- Contact section
+- Footer
+
+---
+
+# Naming Convention
+
+Use BEM.
+
+```css
+.product-card {}
+.product-card__image {}
+.product-card__title {}
+.product-card--featured {}
+```
+
+Avoid generic names (`.box`, `.item`, `.blue`). Prefer `.product-card`, `.category-item`, `.primary-button`.
+
+---
+
+# Product Data and Markup
+
+Automotive parts cards must support:
+
+- Product image
+- Product name
+- Vehicle compatibility
+- Manufacturer/brand
+- Availability status
+- Wholesale information
+- Contact CTA
+
+```html
+<article class="product-card">
+  <img alt="">
+  <h3></h3>
+  <p class="product-card__vehicle"></p>
+  <button type="button">تماس برای خرید عمده</button>
+</article>
+```
+
+Card visual hierarchy and styling follow `design-language.mdc`.
+
+---
+
+# Responsive
+
+Mobile-first. Must work at 360px, 768px, 1024px, and 1440px.
+
+Mobile navigation:
+- Hamburger menu
+- Smooth open/close
+- Accessible controls
+
+---
+
+# JavaScript
+
+Vanilla JS only. Prefer `document.querySelector`.
+
+Avoid global variables, inline `onclick` handlers, and large monolithic scripts.
+
+Organize:
+
+```text
+/js
+ ├── main.js
+ ├── menu.js
+ ├── slider.js
+ └── products.js
+```
+
+---
+
+# Accessibility
+
+Always include:
+
+- `alt` on images
+- Semantic HTML
+- Real `<button>` instead of clickable `<div>`
+- Keyboard-accessible navigation
+- Proper heading hierarchy
+
+---
+
+# SEO
+
+Every page needs:
+
+- `title`
+- meta description
+- canonical URL placeholder
+- Open Graph tags
+
+Use semantic landmarks: `header`, `nav`, `main`, `section`, `article`, `footer`.
+
+---
+
+# Forms
+
+Contact forms should include:
+
+- نام شرکت
+- نام مسئول خرید
+- شماره تماس
+- توضیحات درخواست
+
+Primary CTA labels:
+
+- درخواست همکاری
+- استعلام قیمت
+- تماس با فروش
+
+---
+
+# Code Quality
+
+- Write clean, readable code
+- Comment complex logic
+- Keep CSS organized; avoid duplicated styles
+- Prefer CSS variables
+- Keep JavaScript modular

@@ -1,0 +1,36 @@
+# Product Brands
+
+Products may belong to different automotive brands/manufacturers.
+
+Current supported brands:
+
+- سردساز
+- VFN
+- ساندن (Sanden)
+- سویاب صنعت
+- Pukka
+
+
+# Brand Information
+
+Each product should support:
+
+- Brand name
+- Brand logo (optional)
+- Manufacturer information
+- Product compatibility
+- Product category
+
+
+Example:
+
+```javascript
+{
+  name: "کمپرسور کولر خودرو",
+  brand: "Sanden",
+  category: "کمپرسور کولر",
+  compatibleVehicles: [
+    "پژو 405",
+    "سمند"
+  ]
+}
