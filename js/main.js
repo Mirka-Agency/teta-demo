@@ -35,24 +35,6 @@ function initCountdown() {
   window.setInterval(tick, 1000);
 }
 
-function initInquiryForm() {
-  const form = document.querySelector("[data-inquiry-form]");
-  const message = document.querySelector("[data-form-message]");
-  if (!form) {
-    return;
-  }
-
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    form.reset();
-    if (message) {
-      message.classList.add("is-visible");
-      message.textContent =
-        "درخواست شما ثبت شد. کارشناسان فروش تتا به‌زودی برای استعلام قیمت عمده تماس می‌گیرند.";
-    }
-  });
-}
-
 function initNavHighlight() {
   const links = document.querySelectorAll(".site-nav__link");
   const sections = [...links]
@@ -87,6 +69,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeroSlider();
   initCarousels();
   initCountdown();
-  initInquiryForm();
   initNavHighlight();
 });

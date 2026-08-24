@@ -86,7 +86,7 @@
           <i class="bi bi-headset" aria-hidden="true"></i>
           تماس با پشتیبانی
         </a>
-        <a class="primary-button" href="#inquiry">استعلام قیمت</a>
+        <a class="primary-button" href="#contact">استعلام قیمت</a>
       </div>
     </div>
 
@@ -111,12 +111,12 @@
             <p class="hero__lead">ارائه کمپرسور، کندانسور، اواپراتور و سایر قطعات تهویه خودرو با تضمین کیفیت، قیمت مناسب و ارسال سریع به سراسر کشور.</p>
             <div class="hero__actions">
               <a class="hero-button hero-button--primary" href="#contact">
-                <i class="bi bi-telephone" aria-hidden="true"></i>
-                <span>تماس با فروش</span>
-              </a>
-              <a class="hero-button hero-button--ghost" href="#inquiry">
                 <i class="bi bi-clipboard-check" aria-hidden="true"></i>
                 <span>استعلام قیمت</span>
+              </a>
+              <a class="hero-button hero-button--ghost" href="#contact">
+                <i class="bi bi-telephone" aria-hidden="true"></i>
+                <span>تماس با فروش</span>
               </a>
             </div>
           </div>
@@ -126,7 +126,8 @@
               <article class="hero-slide is-active" data-hero-slide>
                 <img class="hero-slide__image" src="assets/hero/hero-1.png" alt="قطعات تهویه خودروهای قدیمی">
                 <div class="hero-slide__meta">
-                  <p class="hero-slide__year">1967</p>
+                  <p class="hero-slide__year">۱۹۶۷</p>
+                  <p class="hero-slide__caption">از سال ۱۹۶۷</p>
                   <p class="hero-slide__label">لوازم خودروهای قدیمی</p>
                 </div>
               </article>
@@ -158,38 +159,47 @@
           <form class="product-search__panel" data-product-search>
             <p class="product-search__title" id="search-heading">جستجوی<br><span>محصول موردنظر</span></p>
             <div class="product-search__fields">
-              <div class="field-select field-select--maker">
-                <label class="visually-hidden" for="maker">نام سازنده</label>
-                <select id="maker" name="maker">
-                  <option value="">نام سازنده</option>
-                  <option value="پژو">پژو</option>
-                  <option value="زامیاد">زامیاد</option>
-                  <option value="ایران خودرو">ایران خودرو</option>
-                </select>
+              <div class="field-select field-select--type">
+                <label class="field-select__label" for="vehicle-type">نوع خودرو</label>
+                <div class="field-select__control">
+                  <select id="vehicle-type" name="vehicleType">
+                    <option value="">انتخاب کنید</option>
+                    <option value="سواری ایرانی">سواری ایرانی</option>
+                    <option value="سواری خارجی">سواری خارجی</option>
+                    <option value="خودرو سنگین">خودرو سنگین</option>
+                  </select>
+                </div>
               </div>
-              <div class="field-select field-select--car">
-                <label class="visually-hidden" for="car">نام خودرو</label>
-                <select id="car" name="car">
-                  <option value="">نام خودرو</option>
-                  <option value="بی ام و">بی ام و</option>
-                  <option value="پراید">پراید</option>
-                  <option value="پژو 206">پژو 206</option>
-                  <option value="پژو پارس">پژو پارس</option>
-                  <option value="زانتیا">زانتیا</option>
-                  <option value="شاهین">شاهین</option>
-                  <option value="سمند">سمند</option>
-                </select>
+              <div class="field-select field-select--model">
+                <label class="field-select__label" for="vehicle-model">مدل خودرو</label>
+                <div class="field-select__control">
+                  <select id="vehicle-model" name="vehicleModel">
+                    <option value="">انتخاب کنید</option>
+                    <option value="پراید">پراید</option>
+                    <option value="پژو ۲۰۶">پژو ۲۰۶</option>
+                    <option value="پژو ۴۰۵">پژو ۴۰۵</option>
+                    <option value="سمند">سمند</option>
+                    <option value="شاهین">شاهین</option>
+                    <option value="زانتیا">زانتیا</option>
+                  </select>
+                </div>
               </div>
-              <div class="field-select field-select--trim">
-                <label class="visually-hidden" for="trim">تیپ خودرو</label>
-                <select id="trim" name="trim">
-                  <option value="">تیپ خودرو</option>
-                  <option value="تیپ 2">تیپ 2</option>
-                  <option value="تیپ 5">تیپ 5</option>
-                </select>
+              <div class="field-select field-select--part">
+                <label class="field-select__label" for="part">قطعه</label>
+                <div class="field-select__control">
+                  <select id="part" name="part">
+                    <option value="">انتخاب کنید</option>
+                    <option value="کمپرسور">کمپرسور کولر</option>
+                    <option value="کندانسور">کندانسور</option>
+                    <option value="اواپراتور">اواپراتور</option>
+                    <option value="فن کولر">فن کولر</option>
+                    <option value="درایر">درایر</option>
+                    <option value="بخاری">رادیاتور بخاری</option>
+                  </select>
+                </div>
               </div>
-              <button class="primary-button" type="submit">
-                جستجو
+              <button class="primary-button product-search__submit" type="submit">
+                جست‌وجوی قطعه
                 <i class="bi bi-search" aria-hidden="true"></i>
               </button>
             </div>
@@ -206,10 +216,13 @@
                 <h2 class="section-head__title" id="offers-title">پیشنهادات شگفت‌انگیز</h2>
               </div>
               <div class="countdown" data-countdown="2026-09-24T23:59:59">
-                <div class="countdown__item"><span class="countdown__value" data-days>00</span><span class="countdown__label">روزها</span></div>
-                <div class="countdown__item"><span class="countdown__value" data-hours>00</span><span class="countdown__label">ساعت</span></div>
-                <div class="countdown__item"><span class="countdown__value" data-minutes>00</span><span class="countdown__label">دقیقه</span></div>
-                <div class="countdown__item"><span class="countdown__value" data-seconds>00</span><span class="countdown__label">ثانیه</span></div>
+                <p class="countdown__caption">تا پایان پیشنهاد</p>
+                <div class="countdown__items">
+                  <div class="countdown__item"><span class="countdown__value" data-days>00</span><span class="countdown__label">روزها</span></div>
+                  <div class="countdown__item"><span class="countdown__value" data-hours>00</span><span class="countdown__label">ساعت</span></div>
+                  <div class="countdown__item"><span class="countdown__value" data-minutes>00</span><span class="countdown__label">دقیقه</span></div>
+                  <div class="countdown__item"><span class="countdown__value" data-seconds>00</span><span class="countdown__label">ثانیه</span></div>
+                </div>
               </div>
             </div>
             <div class="panel__body">
@@ -253,7 +266,7 @@
           <div class="about__text">
             <h2>درباره ما بیشتر بدانید...</h2>
             <p class="about__lead">ما با سال‌ها تجربه در زمینه واردات و توزیع قطعات سیستم تهویه خودرو، مجموعه‌ای کامل از لوازم یدکی خودروهای ایرانی و خارجی را با کیفیت بالا و قیمت مناسب تأمین می‌کنیم. ارائه محصولات مطمئن، تأمین سریع کالا و جلب رضایت مشتریان از مهم‌ترین اهداف ماست. امروز با تکیه بر تنوع محصولات و خدمات حرفه‌ای، در کنار تعمیرکاران، فروشندگان و مصرف‌کنندگان سراسر کشور هستیم.</p>
-            <a class="primary-button" href="#inquiry">درخواست همکاری</a>
+            <a class="primary-button" href="#contact">درخواست همکاری</a>
           </div>
         </div>
       </section>
@@ -372,90 +385,6 @@
         </div>
       </section>
 
-      <section class="videos-section" aria-labelledby="videos-title">
-        <div class="container">
-          <div class="section-head section-head--light">
-            <div class="section-head__title-wrap">
-              <span class="section-head__icon" aria-hidden="true"><i class="bi bi-play-circle"></i></span>
-              <h2 id="videos-title">ویدئوهای آموزشی</h2>
-            </div>
-          </div>
-          <div class="media-grid">
-            <article class="media-card">
-              <a class="media-card__image-wrap" href="#videos-title">
-                <img class="media-card__image" src="assets/videos/video-1.jpg" alt="تعمیر و نوسازی خودروی بی‌ام‌و قدیمی">
-                <span class="media-card__play" aria-hidden="true"><i class="bi bi-play-circle-fill"></i></span>
-              </a>
-              <div class="media-card__body">
-                <h3 class="media-card__title">تعمیر و نوسازی یک خودروی بی‌ام‌و قدیمی</h3>
-                <p class="media-card__meta"><i class="bi bi-calendar3"></i> ۱۴۰۳/۱۰/۰۴</p>
-              </div>
-            </article>
-            <article class="media-card">
-              <a class="media-card__image-wrap" href="#videos-title">
-                <img class="media-card__image" src="assets/videos/video-2.jpg" alt="آموزش اولیه تعمیر خودرو در منزل">
-                <span class="media-card__play" aria-hidden="true"><i class="bi bi-play-circle-fill"></i></span>
-              </a>
-              <div class="media-card__body">
-                <h3 class="media-card__title">دوره کوتاه‌مدت رایگان آموزش‌های اولیه تعمیر خودرو در منزل…</h3>
-                <p class="media-card__meta"><i class="bi bi-calendar3"></i> ۱۴۰۳/۱۰/۰۴</p>
-              </div>
-            </article>
-            <article class="media-card">
-              <a class="media-card__image-wrap" href="#videos-title">
-                <img class="media-card__image" src="assets/videos/video-3.jpg" alt="مشکلات برقی خودرو تارا">
-                <span class="media-card__play" aria-hidden="true"><i class="bi bi-play-circle-fill"></i></span>
-              </a>
-              <div class="media-card__body">
-                <h3 class="media-card__title">با مشکلات برقی خودرو تارا چه کار کنیم؟</h3>
-                <p class="media-card__meta"><i class="bi bi-calendar3"></i> ۱۴۰۳/۱۰/۰۴</p>
-              </div>
-            </article>
-            <article class="media-card">
-              <a class="media-card__image-wrap" href="#videos-title">
-                <img class="media-card__image" src="assets/videos/video-4.jpg" alt="آموزش تعمیر رادیاتور پراید">
-                <span class="media-card__play" aria-hidden="true"><i class="bi bi-play-circle-fill"></i></span>
-              </a>
-              <div class="media-card__body">
-                <h3 class="media-card__title">آموزش تعمیر رادیاتور پراید در منزل بدون تجهیزات…</h3>
-                <p class="media-card__meta"><i class="bi bi-calendar3"></i> ۱۴۰۳/۱۰/۰۴</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="inquiry" id="inquiry">
-        <div class="container">
-          <div class="inquiry__shell">
-            <div class="inquiry__head">
-              <span class="inquiry__icon" aria-hidden="true"><i class="bi bi-clipboard2-pulse"></i></span>
-              <h2>سفارش و استعلام قیمت محصولات</h2>
-            </div>
-            <form class="inquiry__form" data-inquiry-form>
-              <div class="inquiry__field inquiry__field--company">
-                <label class="visually-hidden" for="inquiry-company">نام شرکت</label>
-                <input id="inquiry-company" name="company" type="text" placeholder="نام شرکت" autocomplete="organization" required>
-              </div>
-              <div class="inquiry__field inquiry__field--person">
-                <label class="visually-hidden" for="inquiry-person">نام مسئول خرید</label>
-                <input id="inquiry-person" name="buyer" type="text" placeholder="نام مسئول خرید" autocomplete="name" required>
-              </div>
-              <div class="inquiry__field inquiry__field--phone">
-                <label class="visually-hidden" for="inquiry-phone">شماره تماس</label>
-                <input id="inquiry-phone" name="phone" type="tel" placeholder="شماره تماس" autocomplete="tel" required>
-              </div>
-              <div class="inquiry__field inquiry__field--note">
-                <label class="visually-hidden" for="inquiry-note">توضیحات درخواست</label>
-                <input id="inquiry-note" name="details" type="text" placeholder="توضیحات درخواست" required>
-              </div>
-              <button class="primary-button inquiry__submit" type="submit">استعلام قیمت</button>
-              <p class="form-message" data-form-message role="status"></p>
-            </form>
-          </div>
-        </div>
-      </section>
-
       <section class="news-section" id="news" aria-labelledby="news-title">
         <div class="container">
           <div class="section-head section-head--light">
@@ -550,9 +479,9 @@
           </div>
           <div class="footer-links">
             <h3 class="footer-links__title">خدمات فروشگاه</h3>
-            <a href="#inquiry">قوانین مرجوع کالا</a>
-            <a href="#inquiry">مشاوره قبل از خرید</a>
-            <a href="#inquiry">درخواست محصول</a>
+            <a href="#contact">قوانین مرجوع کالا</a>
+            <a href="#contact">مشاوره قبل از خرید</a>
+            <a href="#contact">درخواست محصول</a>
           </div>
           <div class="footer-links">
             <h3 class="footer-links__title">دسترسی سریع</h3>

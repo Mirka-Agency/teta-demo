@@ -11,6 +11,8 @@ export const products = [
     availability: "موجود",
     wholesale: "فروش عمده از ۱۰ عدد",
     image: "assets/products/product-pic8.png",
+    oldPrice: 5900000,
+    price: 4850000,
     featured: true,
     newest: true,
     bestseller: true,
@@ -25,6 +27,8 @@ export const products = [
     availability: "موجود",
     wholesale: "قیمت ویژه عمده",
     image: "assets/products/product-pic11.png",
+    oldPrice: 2650000,
+    price: 2150000,
     featured: true,
     newest: true,
     bestseller: true,
@@ -39,6 +43,8 @@ export const products = [
     availability: "موجود",
     wholesale: "تأمین مستمر عمده",
     image: "assets/products/product-pic5.png",
+    oldPrice: 1550000,
+    price: 1280000,
     featured: true,
     newest: false,
     bestseller: true,
@@ -53,6 +59,8 @@ export const products = [
     availability: "موجود",
     wholesale: "ارسال سریع عمده",
     image: "assets/products/product-pic3.png",
+    oldPrice: 1120000,
+    price: 890000,
     featured: true,
     newest: true,
     bestseller: false,
@@ -67,6 +75,8 @@ export const products = [
     availability: "موجود",
     wholesale: "فروش عمده",
     image: "assets/products/product-pic9.png",
+    oldPrice: 850000,
+    price: 720000,
     featured: false,
     newest: true,
     bestseller: true,
@@ -81,6 +91,8 @@ export const products = [
     availability: "موجود",
     wholesale: "بسته‌بندی کارتنی عمده",
     image: "assets/products/product-pic12.png",
+    oldPrice: 420000,
+    price: 340000,
     featured: true,
     newest: true,
     bestseller: false,
@@ -95,6 +107,8 @@ export const products = [
     availability: "موجود",
     wholesale: "حداقل سفارش عمده",
     image: "assets/products/product-pic6.png",
+    oldPrice: 280000,
+    price: 210000,
     featured: false,
     newest: true,
     bestseller: true,
@@ -109,11 +123,41 @@ export const products = [
     availability: "در حال تأمین",
     wholesale: "استعلام قیمت عمده",
     image: "assets/products/product-pic14.png",
+    oldPrice: 520000,
+    price: 450000,
     featured: true,
     newest: false,
     bestseller: true,
   },
 ];
+
+function toPersianDigits(value) {
+  return String(value).replace(/\d/g, (digit) => "۰۱۲۳۴۵۶۷۸۹"[digit]);
+}
+
+function formatToman(amount) {
+  return `${toPersianDigits(amount.toLocaleString("en-US"))} تومان`;
+}
+
+function pricingMarkup(product) {
+  if (!product.price) {
+    return "";
+  }
+
+  const discount = product.oldPrice
+    ? Math.round((1 - product.price / product.oldPrice) * 100)
+    : 0;
+
+  return `
+    <div class="product-card__pricing">
+      <div class="product-card__prices">
+        ${product.oldPrice ? `<span class="product-card__price-old">${formatToman(product.oldPrice)}</span>` : ""}
+        <span class="product-card__price">${formatToman(product.price)}</span>
+      </div>
+      ${discount > 0 ? `<span class="product-card__discount">${toPersianDigits(discount)}٪</span>` : ""}
+    </div>
+  `;
+}
 
 function cardTemplate(product) {
   return `
@@ -127,7 +171,8 @@ function cardTemplate(product) {
       <p class="product-card__vehicle">سازگاری: ${product.vehicle}</p>
       <p class="product-card__brand">برند: ${product.brand}</p>
       <p class="product-card__wholesale">${product.wholesale}</p>
-      <button type="button" class="primary-button product-card__cta" data-inquiry-product="${product.name}">تماس برای خرید عمده</button>
+      ${pricingMarkup(product)}
+      <button type="button" class="primary-button product-card__cta" data-inquiry-product="${product.name}">استعلام خرید عمده</button>
     </article>
   `;
 }
@@ -153,13 +198,7 @@ export function bindProductCtas() {
     if (!button) {
       return;
     }
-    const field = document.querySelector("#inquiry-note");
-    const section = document.querySelector("#inquiry");
-    if (field) {
-      field.value = `استعلام عمده برای ${button.dataset.inquiryProduct}`;
-    }
-    section?.scrollIntoView({ behavior: "smooth" });
-    field?.focus();
+    document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
   });
 }
 
@@ -194,7 +233,7 @@ export function initProductSearch() {
   form?.addEventListener("submit", (event) => {
     event.preventDefault();
     const data = new FormData(form);
-    const query = [data.get("maker"), data.get("car"), data.get("trim")]
+    const query = [data.get("vehicleType"), data.get("vehicleModel"), data.get("part")]
       .filter(Boolean)
       .join(" ");
     applyFilter(query);
