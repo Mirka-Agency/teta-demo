@@ -13,7 +13,7 @@ function getVisibleCount(carousel) {
   return mobile;
 }
 
-export function updateCarousel(carousel) {
+export function updateCarousel(carousel, { animate = false } = {}) {
   const track = carousel.querySelector("[data-carousel-track]");
   const slides = [...carousel.querySelectorAll("[data-carousel-slide]")];
   if (!track || slides.length === 0) {
@@ -31,13 +31,18 @@ export function updateCarousel(carousel) {
   index = Math.min(index, maxIndex);
   carousel.dataset.index = String(index);
 
-  const applyTransform = () => {
-    const slideWidth = slides[0].getBoundingClientRect().width + gap;
-    track.style.transform = `translateX(${index * slideWidth}px)`;
-  };
+  const slideWidth = slides[0].getBoundingClientRect().width + gap;
+  const offset = index * slideWidth;
 
-  applyTransform();
-  requestAnimationFrame(applyTransform);
+  if (!animate) {
+    carousel.classList.remove("is-ready");
+  }
+
+  track.style.transform = `translateX(${offset}px)`;
+
+  if (animate) {
+    carousel.classList.add("is-ready");
+  }
 }
 
 export function refreshCarousels() {
@@ -62,22 +67,28 @@ export function initCarousels() {
         index = 0;
       }
       carousel.dataset.index = String(index);
-      updateCarousel(carousel);
+      updateCarousel(carousel, { animate: true });
     };
 
     prev?.addEventListener("click", () => move(-1));
     next?.addEventListener("click", () => move(1));
 
     if (carousel.dataset.autoplay === "true") {
-      window.setInterval(() => move(1), 5000);
+      window.setTimeout(() => {
+        window.setInterval(() => move(1), 5000);
+      }, 6000);
     }
   });
 
   window.addEventListener("resize", () => {
-    document.querySelectorAll("[data-carousel]").forEach(updateCarousel);
+    document.querySelectorAll("[data-carousel]").forEach((carousel) => {
+      updateCarousel(carousel, { animate: false });
+    });
   });
 
-  document.querySelectorAll("[data-carousel]").forEach(updateCarousel);
+  document.querySelectorAll("[data-carousel]").forEach((carousel) => {
+    updateCarousel(carousel, { animate: false });
+  });
 }
 
 export function initHeroSlider() {

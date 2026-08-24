@@ -257,16 +257,32 @@
       <section class="about" id="about">
         <div class="container about__grid">
           <div class="about__visual">
-            <img class="about__image" src="assets/hero/about.png" alt="تکنسین در حال بررسی سیستم تهویه خودرو">
-            <div class="about__badge">
-              <p class="about__badge-value">۰+</p>
-              <p class="about__badge-label">قطعه خودروهای ایرانی</p>
+            <div class="about__frame">
+              <img class="about__image" src="assets/hero/about.png" alt="قطعات سیستم تهویه و کولر خودرو">
             </div>
           </div>
           <div class="about__text">
-            <h2>درباره ما بیشتر بدانید...</h2>
-            <p class="about__lead">ما با سال‌ها تجربه در زمینه واردات و توزیع قطعات سیستم تهویه خودرو، مجموعه‌ای کامل از لوازم یدکی خودروهای ایرانی و خارجی را با کیفیت بالا و قیمت مناسب تأمین می‌کنیم. ارائه محصولات مطمئن، تأمین سریع کالا و جلب رضایت مشتریان از مهم‌ترین اهداف ماست. امروز با تکیه بر تنوع محصولات و خدمات حرفه‌ای، در کنار تعمیرکاران، فروشندگان و مصرف‌کنندگان سراسر کشور هستیم.</p>
-            <a class="primary-button" href="#contact">درخواست همکاری</a>
+            <h2>بیشتر با ما آشنا شوید</h2>
+            <div class="about__copy">
+              <p>تأمین عمده قطعات کولر و بخاری خودرو را برای تعمیرگاه‌ها و فروشندگان حرفه‌ای انجام می‌دهیم.</p>
+              <p>کیفیت قطعات تهویه برای خودروهای ایرانی و خارجی با تنوع مناسب در انبار مجموعه تضمین می‌شود.</p>
+              <p>سفارش‌ها سریع آماده می‌شوند و ارسال به استان‌های مختلف کشور انجام می‌گیرد.</p>
+            </div>
+            <ul class="about__stats">
+              <li>
+                <strong>۱۵+</strong>
+                <span>سال سابقه</span>
+              </li>
+              <li>
+                <strong>۲۰۰۰+</strong>
+                <span>محصول فعال</span>
+              </li>
+              <li>
+                <strong>۳۱</strong>
+                <span>استان ارسال</span>
+              </li>
+            </ul>
+            <a class="primary-button about__cta" href="#contact">درخواست همکاری</a>
           </div>
         </div>
       </section>
@@ -295,16 +311,11 @@
             </svg>
             <div class="promo-banner__copy">
               <h2 class="promo-banner__title">مرکز واردات و توزیع قطعات تهویه خودروهای ایرانی و خارجی</h2>
-              <div class="promo-banner__meta">
-                <p class="promo-banner__subtitle">ارائه‌کننده انواع قطعات سیستم تهویه خودرو با تضمین کیفیت</p>
-                <a class="promo-banner__shop" href="#products">
-                  <span>مشاهده فروشگاه</span>
-                  <svg width="44" height="20" viewBox="0 0 44 33" aria-hidden="true" focusable="false">
-                    <circle opacity="0.2" cx="16" cy="16.126" r="16"></circle>
-                    <path d="M44 15.1259H10.414L15.707 9.83294L14.293 8.41895L6.586 16.1259L14.293 23.8329L15.707 22.4189L10.414 17.1259H44V15.1259Z"></path>
-                  </svg>
-                </a>
-              </div>
+              <p class="promo-banner__subtitle">ارائه‌کننده انواع قطعات سیستم تهویه خودرو با تضمین کیفیت</p>
+              <a class="promo-banner__cta" href="#products">
+                مشاهده محصولات
+                <i class="bi bi-arrow-left" aria-hidden="true"></i>
+              </a>
             </div>
             <div class="promo-banner__media">
               <p class="promo-banner__year" aria-hidden="true">1867</p>
@@ -355,32 +366,76 @@
           <div class="carousel" data-carousel data-desktop="6" data-tablet="5" data-mobile="3">
             <div class="carousel__viewport">
               <div class="carousel__track" data-carousel-track>
-                <div class="carousel__slide" data-carousel-slide><a class="brand-card" href="#products"><img src="assets/brands/peugeot.svg" alt="پژو"></a></div>
-                <div class="carousel__slide" data-carousel-slide><a class="brand-card" href="#products"><img src="assets/brands/zamyad.svg" alt="زامیاد"></a></div>
-                <div class="carousel__slide" data-carousel-slide><a class="brand-card" href="#products"><strong>Sanden</strong></a></div>
-                <div class="carousel__slide" data-carousel-slide><a class="brand-card" href="#products"><strong>VFN</strong></a></div>
-                <div class="carousel__slide" data-carousel-slide><a class="brand-card" href="#products"><strong>سردساز</strong></a></div>
-                <div class="carousel__slide" data-carousel-slide><a class="brand-card" href="#products"><strong>Pukka</strong></a></div>
-                <div class="carousel__slide" data-carousel-slide><a class="brand-card" href="#products"><strong>سویاب صنعت</strong></a></div>
+                <div class="carousel__slide" data-carousel-slide>
+                  <a class="brand-card is-active" href="#products" data-brand-card aria-current="true">
+                    <span class="brand-card__logo">
+                      <img src="assets/brands/peugeot.svg" alt="پژو" width="80" height="40">
+                    </span>
+                  </a>
+                </div>
+                <div class="carousel__slide" data-carousel-slide>
+                  <a class="brand-card" href="#products" data-brand-card>
+                    <span class="brand-card__logo">
+                      <img src="assets/brands/zamyad.svg" alt="زامیاد" width="80" height="40">
+                    </span>
+                  </a>
+                </div>
+                <div class="carousel__slide" data-carousel-slide>
+                  <a class="brand-card" href="#products" data-brand-card>
+                    <span class="brand-card__logo">
+                      <img src="assets/brands/sanden.svg" alt="Sanden" width="80" height="40">
+                    </span>
+                  </a>
+                </div>
+                <div class="carousel__slide" data-carousel-slide>
+                  <a class="brand-card" href="#products" data-brand-card>
+                    <span class="brand-card__logo">
+                      <img src="assets/brands/vfn.svg" alt="VFN" width="80" height="40">
+                    </span>
+                  </a>
+                </div>
+                <div class="carousel__slide" data-carousel-slide>
+                  <a class="brand-card" href="#products" data-brand-card>
+                    <span class="brand-card__logo">
+                      <img src="assets/brands/sardsaz.svg" alt="سردساز" width="80" height="40">
+                    </span>
+                  </a>
+                </div>
+                <div class="carousel__slide" data-carousel-slide>
+                  <a class="brand-card" href="#products" data-brand-card>
+                    <span class="brand-card__logo">
+                      <img src="assets/brands/pukka.svg" alt="Pukka" width="80" height="40">
+                    </span>
+                  </a>
+                </div>
+                <div class="carousel__slide" data-carousel-slide>
+                  <a class="brand-card" href="#products" data-brand-card>
+                    <span class="brand-card__logo">
+                      <img src="assets/brands/soyab.svg" alt="سویاب صنعت" width="80" height="40">
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
 
           <div class="category-banners">
-            <article class="category-banner category-banner--peugeot">
-              <img class="category-banner__image" src="assets/category/peugeot-206.png" alt="پژو ۲۰۶ و ۲۰۷">
-              <div class="category-banner__content">
-                <h3 class="category-banner__title">لوازم یدکی انواع پژو ۲۰۶ و ۲۰۷</h3>
-                <a class="primary-button" href="#products">مشاهده فروشگاه</a>
-              </div>
-            </article>
-            <article class="category-banner">
-              <img class="category-banner__image" src="assets/category/iranian.png" alt="خودروهای ایرانی">
-              <div class="category-banner__content">
-                <h3 class="category-banner__title">لوازم یدکی انواع خودروهای ایرانی</h3>
-                <a class="primary-button" href="#products">مشاهده فروشگاه</a>
-              </div>
-            </article>
+            <a class="category-banner category-banner--peugeot" href="#products" aria-label="پژو ۲۰۶ و ۲۰۷، مشاهده فروشگاه">
+              <img class="category-banner__image" src="assets/category/peugeot-206.png" alt="">
+              <span class="category-banner__overlay" aria-hidden="true"></span>
+              <span class="category-banner__content">
+                <h3 class="category-banner__title">پژو ۲۰۶ و ۲۰۷</h3>
+                <span class="primary-button category-banner__cta" aria-hidden="true">مشاهده فروشگاه</span>
+              </span>
+            </a>
+            <a class="category-banner category-banner--iranian" href="#products" aria-label="خودروهای ایرانی، مشاهده فروشگاه">
+              <img class="category-banner__image" src="assets/category/iranian.png" alt="">
+              <span class="category-banner__overlay" aria-hidden="true"></span>
+              <span class="category-banner__content">
+                <h3 class="category-banner__title">خودروهای ایرانی</h3>
+                <span class="primary-button category-banner__cta" aria-hidden="true">مشاهده فروشگاه</span>
+              </span>
+            </a>
           </div>
         </div>
       </section>
@@ -395,44 +450,68 @@
           </div>
           <div class="media-grid">
             <article class="media-card">
-              <a class="media-card__image-wrap" href="#news">
-                <img class="media-card__image" src="assets/blog/blog-1.jpg" alt="انتخاب بهترین روغن موتور">
+              <a class="media-card__link" href="#news" aria-label="مطالعه مقاله: انتخاب بهترین روغن موتور مناسب و زمان تعویض آن">
+                <span class="media-card__image-wrap">
+                  <img class="media-card__image" src="assets/blog/blog-1.jpg" alt="">
+                  <span class="media-card__category">راهنمای خرید</span>
+                </span>
+                <span class="media-card__body">
+                  <h3 class="media-card__title">انتخاب بهترین روغن موتور مناسب و زمان تعویض آن</h3>
+                  <p class="media-card__excerpt">نگهداری درست موتور و سیستم تهویه، عمر قطعات کولر و بخاری را بالا می‌برد و هزینه تعمیر را کم می‌کند.</p>
+                  <span class="media-card__footer">
+                    <time class="media-card__date" datetime="2025-01-22">۱۴۰۳/۱۱/۰۳</time>
+                    <span class="media-card__cta">مطالعه مقاله <i class="bi bi-arrow-left" aria-hidden="true"></i></span>
+                  </span>
+                </span>
               </a>
-              <div class="media-card__body">
-                <h3 class="media-card__title">انتخاب بهترین روغن موتور مناسب و زمان تعویض آن</h3>
-                <p class="media-card__excerpt">نگهداری صحیح موتور و سیستم تهویه، عمر قطعات کولر و بخاری را افزایش می‌دهد و هزینه تعمیرگاه را کم می‌کند.</p>
-                <p class="media-card__meta"><i class="bi bi-calendar3"></i> ۱۴۰۳/۱۱/۰۳</p>
-              </div>
             </article>
             <article class="media-card">
-              <a class="media-card__image-wrap" href="#news">
-                <img class="media-card__image" src="assets/blog/blog-2.jpg" alt="عملکرد شاهین در پیچ‌های تند">
+              <a class="media-card__link" href="#news" aria-label="مطالعه مقاله: عملکرد شاهین در پیچ‌های تند">
+                <span class="media-card__image-wrap">
+                  <img class="media-card__image" src="assets/blog/blog-2.jpg" alt="">
+                  <span class="media-card__category">نگهداری خودرو</span>
+                </span>
+                <span class="media-card__body">
+                  <h3 class="media-card__title">عملکرد شاهین در پیچ‌های تند</h3>
+                  <p class="media-card__excerpt">پایداری حرارتی موتور در رانندگی شهری به سلامت رادیاتور، فن و مدار تهویه بستگی دارد.</p>
+                  <span class="media-card__footer">
+                    <time class="media-card__date" datetime="2024-12-23">۱۴۰۳/۱۰/۰۳</time>
+                    <span class="media-card__cta">مطالعه مقاله <i class="bi bi-arrow-left" aria-hidden="true"></i></span>
+                  </span>
+                </span>
               </a>
-              <div class="media-card__body">
-                <h3 class="media-card__title">عملکرد شاهین در پیچ‌های تند</h3>
-                <p class="media-card__excerpt">پایداری حرارتی موتور در رانندگی شهری به سلامت رادیاتور، فن و مدار تهویه وابسته است.</p>
-                <p class="media-card__meta"><i class="bi bi-calendar3"></i> ۱۴۰۳/۱۰/۰۳</p>
-              </div>
             </article>
             <article class="media-card">
-              <a class="media-card__image-wrap" href="#news">
-                <img class="media-card__image" src="assets/blog/blog-3.jpg" alt="محدوده نرمال درجه آب موتور">
+              <a class="media-card__link" href="#news" aria-label="مطالعه مقاله: محدوده نرمال درجه آب موتور خودرو چه قدر است؟">
+                <span class="media-card__image-wrap">
+                  <img class="media-card__image" src="assets/blog/blog-3.jpg" alt="">
+                  <span class="media-card__category">نگهداری خودرو</span>
+                </span>
+                <span class="media-card__body">
+                  <h3 class="media-card__title">محدوده نرمال درجه آب موتور خودرو چه قدر است؟</h3>
+                  <p class="media-card__excerpt">دمای غیرعادی آب می‌تواند نشانه اختلال در فن، رادیاتور یا قطعات سرمایش باشد.</p>
+                  <span class="media-card__footer">
+                    <time class="media-card__date" datetime="2024-12-23">۱۴۰۳/۱۰/۰۳</time>
+                    <span class="media-card__cta">مطالعه مقاله <i class="bi bi-arrow-left" aria-hidden="true"></i></span>
+                  </span>
+                </span>
               </a>
-              <div class="media-card__body">
-                <h3 class="media-card__title">محدوده نرمال درجه آب موتور خودرو چه قدر است؟</h3>
-                <p class="media-card__excerpt">دمای غیرعادی آب می‌تواند نشانه اختلال در فن، رادیاتور یا قطعات مرتبط با سیستم سرمایش باشد.</p>
-                <p class="media-card__meta"><i class="bi bi-calendar3"></i> ۱۴۰۳/۱۰/۰۳</p>
-              </div>
             </article>
             <article class="media-card">
-              <a class="media-card__image-wrap" href="#news">
-                <img class="media-card__image" src="assets/blog/blog-4.jpg" alt="راه‌های کاهش استهلاک خودرو">
+              <a class="media-card__link" href="#news" aria-label="مطالعه مقاله: راه‌های کاهش استهلاک خودرو">
+                <span class="media-card__image-wrap">
+                  <img class="media-card__image" src="assets/blog/blog-4.jpg" alt="">
+                  <span class="media-card__category">راهنمای خرید</span>
+                </span>
+                <span class="media-card__body">
+                  <h3 class="media-card__title">راه‌های کاهش استهلاک خودرو</h3>
+                  <p class="media-card__excerpt">سرویس دوره‌ای کولر و بخاری یکی از ساده‌ترین راه‌ها برای حفظ راندمان و کاهش استهلاک است.</p>
+                  <span class="media-card__footer">
+                    <time class="media-card__date" datetime="2024-12-23">۱۴۰۳/۱۰/۰۳</time>
+                    <span class="media-card__cta">مطالعه مقاله <i class="bi bi-arrow-left" aria-hidden="true"></i></span>
+                  </span>
+                </span>
               </a>
-              <div class="media-card__body">
-                <h3 class="media-card__title">راه‌های کاهش استهلاک خودرو</h3>
-                <p class="media-card__excerpt">سرویس دوره‌ای کولر و بخاری، یکی از ساده‌ترین روش‌ها برای حفظ راندمان و کاهش استهلاک است.</p>
-                <p class="media-card__meta"><i class="bi bi-calendar3"></i> ۱۴۰۳/۱۰/۰۳</p>
-              </div>
             </article>
           </div>
         </div>
@@ -442,27 +521,27 @@
     <footer class="site-footer" id="contact">
       <div class="container">
         <div class="footer-contacts">
-          <div class="footer-contact">
-            <span class="footer-contact__icon"><i class="bi bi-headset"></i></span>
-            <div>
+          <article class="footer-contact">
+            <span class="footer-contact__icon" aria-hidden="true"><i class="bi bi-headset"></i></span>
+            <div class="footer-contact__body">
               <p class="footer-contact__label">تماس با پشتیبــــانی</p>
               <p class="footer-contact__value">0912-4957698<br>0902-3941002</p>
             </div>
-          </div>
-          <div class="footer-contact">
-            <span class="footer-contact__icon"><i class="bi bi-geo-alt"></i></span>
-            <div>
+          </article>
+          <article class="footer-contact">
+            <span class="footer-contact__icon" aria-hidden="true"><i class="bi bi-geo-alt"></i></span>
+            <div class="footer-contact__body">
               <p class="footer-contact__label">فروشگـــــاه حضوری</p>
               <p class="footer-contact__value">تهران خیابان ملت کوچه کاوه پلاک ۶ طبقه دوم</p>
             </div>
-          </div>
-          <div class="footer-contact">
-            <span class="footer-contact__icon"><i class="bi bi-envelope"></i></span>
-            <div>
+          </article>
+          <article class="footer-contact">
+            <span class="footer-contact__icon" aria-hidden="true"><i class="bi bi-envelope"></i></span>
+            <div class="footer-contact__body">
               <p class="footer-contact__label">پست الکترونیـــــــکی</p>
               <p class="footer-contact__value">info@teta.co.com</p>
             </div>
-          </div>
+          </article>
         </div>
 
         <div class="footer-main">

@@ -11,6 +11,9 @@
   --color-overlay: rgba(9, 20, 38, 0.55);
   --color-blur: rgba(80, 120, 169, 0.3);
   --color-glass: rgba(217, 217, 217, 0.16);
+  --color-surface-tint: color-mix(in srgb, var(--color-secondary) 12%, var(--color-white));
+  --color-border-tint: color-mix(in srgb, var(--color-secondary) 28%, var(--color-white));
+  --color-footer-bg: color-mix(in srgb, var(--color-secondary) 9%, var(--color-white));
 
   --font-family-base: "Vazirmatn", "IRANSansX", Tahoma, Arial, sans-serif;
   --font-family-heading: "Vazirmatn", "IRANSansX", Tahoma, Arial, sans-serif;

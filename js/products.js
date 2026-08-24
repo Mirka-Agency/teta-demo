@@ -159,11 +159,12 @@ function pricingMarkup(product) {
   `;
 }
 
-function cardTemplate(product) {
+function cardTemplate(product, options = {}) {
+  const loading = options.eager ? "eager" : "lazy";
   return `
     <article class="product-card">
       <div class="product-card__media">
-        <img class="product-card__image" src="${product.image}" alt="${product.name}">
+        <img class="product-card__image" src="${product.image}" alt="${product.name}" width="400" height="300" decoding="async" loading="${loading}">
         <span class="product-card__badge">${product.availability}</span>
       </div>
       <p class="product-card__code">کد محصول: ${product.code}</p>
@@ -186,7 +187,7 @@ export function renderProductRails() {
     mount.innerHTML = list
       .map(
         (item) =>
-          `<div class="carousel__slide" data-carousel-slide>${cardTemplate(item)}</div>`
+          `<div class="carousel__slide" data-carousel-slide>${cardTemplate(item, { eager: kind === "newest" })}</div>`
       )
       .join("");
   });
