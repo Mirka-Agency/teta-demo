@@ -5,6 +5,7 @@ import {
   bindProductCtas,
   initProductSearch,
 } from "./products.js";
+import { initFaq } from "./faq.js";
 
 function pad(value) {
   return String(value).padStart(2, "0");
@@ -60,35 +61,6 @@ function initNavHighlight() {
   window.addEventListener("scroll", onScroll, { passive: true });
 }
 
-function initBrandCards() {
-  const cards = document.querySelectorAll("[data-brand-card]");
-  if (cards.length === 0) {
-    return;
-  }
-
-  const setActive = (activeCard) => {
-    cards.forEach((item) => {
-      const isActive = item === activeCard;
-      item.classList.toggle("is-active", isActive);
-      if (isActive) {
-        item.setAttribute("aria-current", "true");
-      } else {
-        item.removeAttribute("aria-current");
-      }
-    });
-  };
-
-  cards.forEach((card) => {
-    if (card.classList.contains("is-active")) {
-      card.setAttribute("aria-current", "true");
-    }
-
-    card.addEventListener("click", () => {
-      setActive(card);
-    });
-  });
-}
-
 document.addEventListener("DOMContentLoaded", () => {
   initMenu();
   initSearchModal();
@@ -99,5 +71,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initCarousels();
   initCountdown();
   initNavHighlight();
-  initBrandCards();
+  initFaq();
 });

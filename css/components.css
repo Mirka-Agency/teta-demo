@@ -17,8 +17,8 @@
   color: var(--color-white);
   border-radius: var(--radius-md);
   padding: 0.625rem 0.75rem;
-  font-size: 0.8125rem;
-  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-button);
+  font-weight: var(--font-weight-medium);
   line-height: 1.25rem;
 }
 
@@ -38,7 +38,7 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   padding: 0.375rem 0.5rem;
-  font-size: 0.8125rem;
+  font-size: var(--font-size-button);
   font-weight: var(--font-weight-medium);
 }
 
@@ -70,24 +70,17 @@
 
 @media (min-width: 768px) {
   .primary-button {
-    font-size: 0.875rem;
     padding: 0.625rem 0.75rem;
-  }
-
-  .ghost-button {
-    font-size: 0.875rem;
   }
 }
 
 @media (min-width: 1024px) {
   .primary-button {
-    font-size: 1rem;
     padding: 0.75rem 1rem 0.625rem;
   }
 
   .ghost-button {
     padding: 0.6875rem 0.625rem;
-    font-size: 0.9375rem;
   }
 }
 
@@ -154,7 +147,7 @@
   justify-content: center;
   min-height: 44px;
   padding: 0.5rem 0.7rem;
-  font-size: 0.875rem;
+  font-size: var(--font-size-button);
   font-weight: var(--font-weight-medium);
   line-height: 1.4;
   color: var(--color-text);
@@ -205,7 +198,7 @@
   border: 0;
   border-radius: var(--radius-lg);
   font-family: var(--font-family-heading);
-  font-size: 0.875rem;
+  font-size: var(--font-size-button);
   font-weight: var(--font-weight-medium);
   line-height: 1;
   cursor: pointer;
@@ -247,7 +240,7 @@
   color: var(--color-white);
   border: 2px solid var(--color-white);
   border-radius: 999px;
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   font-weight: var(--font-weight-bold);
   line-height: 1;
 }
@@ -275,7 +268,7 @@
   color: var(--color-white);
   border-radius: var(--radius-md);
   font-family: var(--font-family-heading);
-  font-size: 0.875rem;
+  font-size: var(--font-size-button);
   font-weight: var(--font-weight-medium);
   line-height: 1.2;
   white-space: nowrap;
@@ -359,7 +352,7 @@
   min-height: 44px;
   padding: 0.75rem 0.25rem;
   border-bottom: 1px solid var(--color-border-soft);
-  font-size: 0.875rem;
+  font-size: var(--font-size-body);
   font-weight: var(--font-weight-medium);
 }
 
@@ -530,7 +523,7 @@
   color: var(--color-white);
   border-radius: var(--radius-sm);
   padding: 0.25rem 0.5rem;
-  font-size: 0.75rem;
+  font-size: var(--font-size-meta);
   font-weight: var(--font-weight-semibold);
   line-height: 1.125rem;
 }
@@ -540,13 +533,13 @@
 .product-card__brand,
 .product-card__wholesale {
   color: var(--color-muted);
-  font-size: 0.875rem;
+  font-size: var(--font-size-meta);
   font-weight: var(--font-weight-medium);
   line-height: 1.6;
 }
 
 .product-card__title {
-  font-size: 1rem;
+  font-size: var(--font-size-card);
   font-weight: var(--font-weight-semibold);
   line-height: 1.6;
   min-height: 3.2em;
@@ -567,14 +560,14 @@
 
 .product-card__price-old {
   color: var(--color-muted);
-  font-size: 0.75rem;
+  font-size: var(--font-size-meta);
   line-height: 1.3;
   text-decoration: line-through;
 }
 
 .product-card__price {
   color: var(--color-primary);
-  font-size: 0.9375rem;
+  font-size: var(--font-size-card);
   font-weight: var(--font-weight-bold);
   line-height: 1.4;
 }
@@ -584,7 +577,7 @@
   color: var(--color-white);
   border-radius: var(--radius-sm);
   padding: 0.2rem 0.45rem;
-  font-size: 0.75rem;
+  font-size: var(--font-size-meta);
   font-weight: var(--font-weight-bold);
   line-height: 1.2;
   flex-shrink: 0;
@@ -617,6 +610,8 @@
 .brand-card:hover,
 .brand-card:focus-visible {
   border-color: var(--color-secondary);
+  background: var(--color-blur);
+  box-shadow: inset 0 0 0 1px var(--color-secondary);
 }
 
 .brand-card:focus-visible {
@@ -642,12 +637,6 @@
   max-height: 40px;
   object-fit: contain;
   object-position: center;
-}
-
-.brand-card.is-active {
-  border-color: var(--color-secondary);
-  background: var(--color-blur);
-  box-shadow: inset 0 0 0 1px var(--color-secondary);
 }
 
 .category-banner {
@@ -734,9 +723,9 @@
   margin: 0;
   max-width: 100%;
   color: var(--color-white);
-  font-size: 1.0625rem;
+  font-size: var(--font-size-card);
   font-weight: var(--font-weight-bold);
-  line-height: 1.75rem;
+  line-height: 1.6;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -815,7 +804,7 @@
   border-radius: var(--radius-md);
   background: var(--color-primary);
   color: var(--color-white);
-  font-size: 0.75rem;
+  font-size: var(--font-size-meta);
   font-weight: var(--font-weight-semibold);
   line-height: 1.4;
 }
@@ -838,7 +827,7 @@
 }
 
 .media-card__title {
-  font-size: 1rem;
+  font-size: var(--font-size-card);
   font-weight: var(--font-weight-semibold);
   line-height: 1.6;
   margin-block-end: 0.5rem;
@@ -856,7 +845,7 @@
   line-clamp: 3;
   overflow: hidden;
   color: var(--color-muted);
-  font-size: 0.875rem;
+  font-size: var(--font-size-body);
   font-weight: var(--font-weight-medium);
   line-height: 1.7;
   min-height: calc(1.7em * 2);
@@ -876,7 +865,7 @@
   display: inline-flex;
   align-items: center;
   color: var(--color-text);
-  font-size: 0.8125rem;
+  font-size: var(--font-size-meta);
   font-weight: var(--font-weight-semibold);
 }
 
@@ -885,8 +874,8 @@
   align-items: center;
   gap: 0.25rem;
   color: var(--color-secondary);
-  font-size: 0.8125rem;
-  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-button);
+  font-weight: var(--font-weight-medium);
   white-space: nowrap;
 }
 
@@ -902,6 +891,12 @@
   justify-content: space-between;
   gap: 0.75rem;
   flex-wrap: wrap;
+}
+
+.section-head h2,
+.section-head__title {
+  font-size: var(--font-size-section);
+  line-height: var(--line-height-section);
 }
 
 .section-head__title-wrap {
@@ -935,6 +930,126 @@
 
 .section-head--light .section-head__icon {
   background: var(--color-bg);
+}
+
+/* FAQ accordion */
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.faq__item {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.faq__heading {
+  margin: 0;
+}
+
+.faq__question {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  min-height: 3.5rem;
+  padding: 0.85rem 1rem;
+  border: 0;
+  background: transparent;
+  color: var(--color-primary);
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-card);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.6;
+  text-align: start;
+  cursor: pointer;
+}
+
+.faq__question:hover,
+.faq__question:focus-visible {
+  background: var(--color-surface-tint);
+}
+
+.faq__question:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: -2px;
+}
+
+.faq__mark {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-size: 1rem;
+}
+
+.faq__item.is-open .faq__mark {
+  background: var(--color-secondary);
+}
+
+.faq__text {
+  flex: 1;
+  min-width: 0;
+}
+
+.faq__chevron {
+  flex-shrink: 0;
+  color: var(--color-secondary);
+  font-size: 1rem;
+  transition: transform 0.25s ease;
+}
+
+.faq__question[aria-expanded="true"] .faq__chevron {
+  transform: rotate(180deg);
+}
+
+.faq__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.28s ease;
+}
+
+.faq__item.is-open .faq__panel {
+  grid-template-rows: 1fr;
+}
+
+.faq__panel-inner {
+  overflow: hidden;
+}
+
+.faq__answer {
+  margin: 0;
+  padding-block: 0 1.05rem;
+  padding-inline: 1rem 1rem;
+  padding-inline-start: 4.25rem;
+  color: var(--color-muted);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
+}
+
+@media (max-width: 767px) {
+  .faq__question {
+    gap: 0.65rem;
+    padding: 0.8rem 0.85rem;
+  }
+
+  .faq__mark {
+    width: 36px;
+    height: 36px;
+  }
+
+  .faq__answer {
+    padding-inline-start: 0.85rem;
+    padding-inline-end: 0.85rem;
+  }
 }
 
 /* Footer */
@@ -1009,7 +1124,7 @@
   margin: 0;
   color: var(--color-white);
   font-family: var(--font-family-heading);
-  font-size: 0.875rem;
+  font-size: var(--font-size-body);
   font-weight: var(--font-weight-bold);
   line-height: 1.5;
 }
@@ -1017,7 +1132,7 @@
 .footer-contact__value {
   margin: 0;
   color: var(--color-white);
-  font-size: 0.875rem;
+  font-size: var(--font-size-body);
   font-weight: var(--font-weight-semibold);
   line-height: 1.7;
 }
@@ -1080,7 +1195,7 @@
   flex: 1;
   min-width: 0;
   color: var(--color-muted);
-  font-size: 0.875rem;
+  font-size: var(--font-size-body);
   font-weight: var(--font-weight-medium);
   line-height: 1.7;
 }
@@ -1097,7 +1212,7 @@
   gap: 0.5rem;
   margin-block-end: 0.85rem;
   color: var(--color-text);
-  font-size: 1rem;
+  font-size: var(--font-size-card);
   font-weight: var(--font-weight-bold);
 }
 
@@ -1112,7 +1227,7 @@
 .footer-links a {
   display: block;
   color: var(--color-muted);
-  font-size: 0.875rem;
+  font-size: var(--font-size-body);
   font-weight: var(--font-weight-medium);
   line-height: 1.7;
   padding-block: 0.35rem;
@@ -1126,7 +1241,7 @@
 .footer-bottom {
   background: var(--color-white);
   color: var(--color-muted);
-  font-size: 0.8125rem;
+  font-size: var(--font-size-meta);
   line-height: 1.7;
   font-weight: var(--font-weight-medium);
 }
@@ -1196,7 +1311,7 @@
 
 @media (min-width: 1024px) {
   .footer-main {
-    grid-template-columns: minmax(18rem, 2fr) repeat(5, minmax(0, 1fr));
+    grid-template-columns: minmax(20rem, 2.5fr) repeat(5, minmax(0, 1fr));
   }
 
   .footer-brand {
@@ -1209,10 +1324,5 @@
 
   .category-banner {
     height: 250px;
-  }
-
-  .category-banner__title {
-    font-size: 1.25rem;
-    line-height: 2rem;
   }
 }
