@@ -4,6 +4,8 @@ export function initFaq() {
     return;
   }
 
+  const items = [...root.querySelectorAll(".faq__item")];
+
   const setOpen = (item, open) => {
     const trigger = item.querySelector("[data-faq-trigger]");
     const panel = item.querySelector("[data-faq-panel]");
@@ -16,13 +18,15 @@ export function initFaq() {
     panel.setAttribute("aria-hidden", String(!open));
   };
 
-  root.querySelectorAll("[data-faq-trigger]").forEach((trigger) => {
+  items.forEach((item) => {
+    const trigger = item.querySelector("[data-faq-trigger]");
+    if (!trigger) {
+      return;
+    }
+
     trigger.addEventListener("click", () => {
-      const item = trigger.closest(".faq__item");
-      if (!item) {
-        return;
-      }
-      setOpen(item, trigger.getAttribute("aria-expanded") !== "true");
+      const willOpen = trigger.getAttribute("aria-expanded") !== "true";
+      items.forEach((other) => setOpen(other, other === item && willOpen));
     });
   });
 }

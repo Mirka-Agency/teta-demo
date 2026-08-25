@@ -6,6 +6,7 @@ import {
   initProductSearch,
 } from "./products.js";
 import { initFaq } from "./faq.js";
+import { initCustomSelects } from "./select.js";
 
 function pad(value) {
   return String(value).padStart(2, "0");
@@ -72,4 +73,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initCountdown();
   initNavHighlight();
   initFaq();
+  initCustomSelects();
 });

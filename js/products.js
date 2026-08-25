@@ -15,7 +15,6 @@ export const products = [
     price: 4850000,
     featured: true,
     newest: true,
-    bestseller: true,
   },
   {
     id: "cnd-vfn-206",
@@ -31,7 +30,6 @@ export const products = [
     price: 2150000,
     featured: true,
     newest: true,
-    bestseller: true,
   },
   {
     id: "evp-sardsaz-pride",
@@ -47,7 +45,6 @@ export const products = [
     price: 1280000,
     featured: true,
     newest: false,
-    bestseller: true,
   },
   {
     id: "fan-pukka-pars",
@@ -63,7 +60,6 @@ export const products = [
     price: 890000,
     featured: true,
     newest: true,
-    bestseller: false,
   },
   {
     id: "heater-sooyab-samand",
@@ -79,7 +75,6 @@ export const products = [
     price: 720000,
     featured: false,
     newest: true,
-    bestseller: true,
   },
   {
     id: "dryer-sanden",
@@ -95,7 +90,6 @@ export const products = [
     price: 340000,
     featured: true,
     newest: true,
-    bestseller: false,
   },
   {
     id: "switch-vfn",
@@ -111,7 +105,6 @@ export const products = [
     price: 210000,
     featured: false,
     newest: true,
-    bestseller: true,
   },
   {
     id: "hose-sardsaz",
@@ -127,7 +120,6 @@ export const products = [
     price: 450000,
     featured: true,
     newest: false,
-    bestseller: true,
   },
 ];
 
@@ -144,19 +136,27 @@ function pricingMarkup(product) {
     return "";
   }
 
-  const discount = product.oldPrice
-    ? Math.round((1 - product.price / product.oldPrice) * 100)
-    : 0;
-
   return `
     <div class="product-card__pricing">
       <div class="product-card__prices">
         ${product.oldPrice ? `<span class="product-card__price-old">${formatToman(product.oldPrice)}</span>` : ""}
         <span class="product-card__price">${formatToman(product.price)}</span>
       </div>
-      ${discount > 0 ? `<span class="product-card__discount">${toPersianDigits(discount)}٪</span>` : ""}
     </div>
   `;
+}
+
+function discountMarkup(product) {
+  if (!product.oldPrice || !product.price) {
+    return "";
+  }
+
+  const discount = Math.round((1 - product.price / product.oldPrice) * 100);
+  if (discount <= 0) {
+    return "";
+  }
+
+  return `<span class="product-card__discount">${toPersianDigits(discount)}٪</span>`;
 }
 
 function cardTemplate(product, options = {}) {
@@ -166,12 +166,11 @@ function cardTemplate(product, options = {}) {
       <div class="product-card__media">
         <img class="product-card__image" src="${product.image}" alt="${product.name}" width="400" height="300" decoding="async" loading="${loading}">
         <span class="product-card__badge">${product.availability}</span>
+        ${discountMarkup(product)}
       </div>
-      <p class="product-card__code">کد محصول: ${product.code}</p>
       <h3 class="product-card__title">${product.name}</h3>
       <p class="product-card__vehicle">سازگاری: ${product.vehicle}</p>
       <p class="product-card__brand">برند: ${product.brand}</p>
-      <p class="product-card__wholesale">${product.wholesale}</p>
       ${pricingMarkup(product)}
       <button type="button" class="primary-button product-card__cta" data-inquiry-product="${product.name}">استعلام خرید عمده</button>
     </article>

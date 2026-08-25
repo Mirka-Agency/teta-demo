@@ -40,7 +40,7 @@
 
   --container-max: 1344px;
   --space-section: 2rem;
-  --header-height: 76px;
+  --header-height: 84px;
 }
 
 @media (min-width: 768px) {
@@ -52,7 +52,7 @@
     --line-height-hero: 2.875rem;
     --line-height-section: 2.25rem;
     --space-section: 2.5rem;
-    --header-height: 84px;
+    --header-height: 92px;
   }
 }
 
@@ -66,6 +66,6 @@
     --line-height-section: 2.45rem;
     --line-height-body: 1.875rem;
     --space-section: 3rem;
-    --header-height: 92px;
+    --header-height: 104px;
   }
 }

@@ -176,8 +176,8 @@
             <p class="hero__lead">ارائه کمپرسور، کندانسور، اواپراتور و سایر قطعات تهویه خودرو با تضمین کیفیت، قیمت مناسب و ارسال سریع به سراسر کشور.</p>
             <div class="hero__actions">
               <a class="hero-button hero-button--primary" href="#contact">
-                <i class="bi bi-clipboard-check" aria-hidden="true"></i>
                 <span>استعلام قیمت</span>
+                <i class="bi bi-arrow-left" aria-hidden="true"></i>
               </a>
               <a class="hero-button hero-button--ghost" href="#contact">
                 <i class="bi bi-telephone" aria-hidden="true"></i>
@@ -277,7 +277,7 @@
           <div class="panel">
             <div class="section-head section-head--dark">
               <div class="section-head__title-wrap">
-                <span class="section-head__icon" aria-hidden="true"><i class="bi bi-truck"></i></span>
+                <span class="section-head__icon" aria-hidden="true"><i class="bi bi-stars"></i></span>
                 <h2 class="section-head__title" id="offers-title">پیشنهادات شگفت‌انگیز</h2>
               </div>
               <div class="countdown" data-countdown="2026-09-24T23:59:59">
@@ -331,6 +331,7 @@
               <p>کیفیت قطعات تهویه برای خودروهای ایرانی و خارجی با تنوع مناسب در انبار مجموعه تضمین می‌شود.</p>
               <p>سفارش‌ها سریع آماده می‌شوند و ارسال به استان‌های مختلف کشور انجام می‌گیرد.</p>
             </div>
+            <a class="primary-button about__cta" href="#contact">درخواست همکاری</a>
             <ul class="about__stats">
               <li>
                 <span class="about__stats-icon" aria-hidden="true"><i class="bi bi-award"></i></span>
@@ -354,7 +355,6 @@
                 </span>
               </li>
             </ul>
-            <a class="primary-button about__cta" href="#contact">درخواست همکاری</a>
           </div>
         </div>
       </section>
@@ -363,7 +363,7 @@
         <div class="container">
           <div class="section-head section-head--light">
             <div class="section-head__title-wrap">
-              <span class="section-head__icon" aria-hidden="true"><i class="bi bi-box-seam"></i></span>
+              <span class="section-head__icon" aria-hidden="true"><i class="bi bi-box2-heart"></i></span>
               <h2 id="newest-title">جدیدترین محصولات ما</h2>
             </div>
           </div>
@@ -396,22 +396,6 @@
         </div>
       </section>
 
-      <section class="products-rail" aria-labelledby="bestseller-title">
-        <div class="container">
-          <div class="section-head section-head--light">
-            <div class="section-head__title-wrap">
-              <span class="section-head__icon" aria-hidden="true"><i class="bi bi-fire"></i></span>
-              <h2 id="bestseller-title">پرفروش‌ترین محصولات ما</h2>
-            </div>
-          </div>
-          <div class="carousel" data-carousel data-desktop="4" data-tablet="3" data-mobile="1" data-autoplay="true">
-            <div class="carousel__viewport">
-              <div class="carousel__track" data-carousel-track data-product-rail="bestseller"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <div class="marquee marquee--reverse" aria-hidden="true">
         <div class="marquee__bar">
           <span class="marquee__item">POWER</span>
@@ -430,7 +414,7 @@
         <div class="container">
           <div class="section-head section-head--light">
             <div class="section-head__title-wrap">
-              <span class="section-head__icon" aria-hidden="true"><i class="bi bi-tags"></i></span>
+              <span class="section-head__icon" aria-hidden="true"><i class="bi bi-award"></i></span>
               <h2 id="brands-title">دسته‌بندی بر اساس برند</h2>
             </div>
           </div>
@@ -515,7 +499,7 @@
         <div class="container">
           <div class="section-head section-head--light">
             <div class="section-head__title-wrap">
-              <span class="section-head__icon" aria-hidden="true"><i class="bi bi-newspaper"></i></span>
+              <span class="section-head__icon" aria-hidden="true"><i class="bi bi-journal-richtext"></i></span>
               <h2 id="news-title">اخبار و مقالات خودرو</h2>
             </div>
           </div>
@@ -592,20 +576,23 @@
         <div class="container">
           <div class="section-head section-head--light">
             <div class="section-head__title-wrap">
-              <span class="section-head__icon" aria-hidden="true"><i class="bi bi-question-circle"></i></span>
+              <span class="section-head__icon" aria-hidden="true"><i class="bi bi-patch-question"></i></span>
               <h2 id="faq-title">سؤالات متداول</h2>
             </div>
           </div>
+          <p class="faq-section__lead">پاسخ پرسش‌های رایج درباره سفارش، ارسال و ضمانت محصولات</p>
           <div class="faq" data-faq>
-            <article class="faq__item">
+            <article class="faq__item is-open">
               <h3 class="faq__heading">
-                <button class="faq__question" type="button" id="faq-q-1" data-faq-trigger aria-expanded="false" aria-controls="faq-a-1">
-                  <span class="faq__mark" aria-hidden="true"><i class="bi bi-chat-square-text"></i></span>
+                <button class="faq__question" type="button" id="faq-q-1" data-faq-trigger aria-expanded="true" aria-controls="faq-a-1">
                   <span class="faq__text">چطور می‌توانم سفارش ثبت کنم؟</span>
-                  <i class="bi bi-chevron-down faq__chevron" aria-hidden="true"></i>
+                  <span class="faq__toggle" aria-hidden="true">
+                    <i class="bi bi-plus-lg faq__toggle-plus"></i>
+                    <i class="bi bi-dash-lg faq__toggle-minus"></i>
+                  </span>
                 </button>
               </h3>
-              <div class="faq__panel" id="faq-a-1" role="region" aria-labelledby="faq-q-1" aria-hidden="true" data-faq-panel>
+              <div class="faq__panel" id="faq-a-1" role="region" aria-labelledby="faq-q-1" aria-hidden="false" data-faq-panel>
                 <div class="faq__panel-inner">
                   <p class="faq__answer">برای ثبت سفارش، نام قطعه، برند و خودرو را از طریق فرم استعلام یا تماس با پشتیبانی ارسال کنید. همکاران فروش موجودی و زمان آماده‌سازی را اعلام می‌کنند و پس از تأیید شما، سفارش عمده ثبت می‌شود.</p>
                 </div>
@@ -614,9 +601,11 @@
             <article class="faq__item">
               <h3 class="faq__heading">
                 <button class="faq__question" type="button" id="faq-q-2" data-faq-trigger aria-expanded="false" aria-controls="faq-a-2">
-                  <span class="faq__mark" aria-hidden="true"><i class="bi bi-tag"></i></span>
                   <span class="faq__text">استعلام قیمت قطعات تهویه چگونه انجام می‌شود؟</span>
-                  <i class="bi bi-chevron-down faq__chevron" aria-hidden="true"></i>
+                  <span class="faq__toggle" aria-hidden="true">
+                    <i class="bi bi-plus-lg faq__toggle-plus"></i>
+                    <i class="bi bi-dash-lg faq__toggle-minus"></i>
+                  </span>
                 </button>
               </h3>
               <div class="faq__panel" id="faq-a-2" role="region" aria-labelledby="faq-q-2" aria-hidden="true" data-faq-panel>
@@ -628,9 +617,11 @@
             <article class="faq__item">
               <h3 class="faq__heading">
                 <button class="faq__question" type="button" id="faq-q-3" data-faq-trigger aria-expanded="false" aria-controls="faq-a-3">
-                  <span class="faq__mark" aria-hidden="true"><i class="bi bi-boxes"></i></span>
                   <span class="faq__text">شرایط خرید عمده در تتا چیست؟</span>
-                  <i class="bi bi-chevron-down faq__chevron" aria-hidden="true"></i>
+                  <span class="faq__toggle" aria-hidden="true">
+                    <i class="bi bi-plus-lg faq__toggle-plus"></i>
+                    <i class="bi bi-dash-lg faq__toggle-minus"></i>
+                  </span>
                 </button>
               </h3>
               <div class="faq__panel" id="faq-a-3" role="region" aria-labelledby="faq-q-3" aria-hidden="true" data-faq-panel>
@@ -642,9 +633,11 @@
             <article class="faq__item">
               <h3 class="faq__heading">
                 <button class="faq__question" type="button" id="faq-q-4" data-faq-trigger aria-expanded="false" aria-controls="faq-a-4">
-                  <span class="faq__mark" aria-hidden="true"><i class="bi bi-shield-check"></i></span>
                   <span class="faq__text">آیا قطعات دارای ضمانت کیفیت هستند؟</span>
-                  <i class="bi bi-chevron-down faq__chevron" aria-hidden="true"></i>
+                  <span class="faq__toggle" aria-hidden="true">
+                    <i class="bi bi-plus-lg faq__toggle-plus"></i>
+                    <i class="bi bi-dash-lg faq__toggle-minus"></i>
+                  </span>
                 </button>
               </h3>
               <div class="faq__panel" id="faq-a-4" role="region" aria-labelledby="faq-q-4" aria-hidden="true" data-faq-panel>
@@ -656,9 +649,11 @@
             <article class="faq__item">
               <h3 class="faq__heading">
                 <button class="faq__question" type="button" id="faq-q-5" data-faq-trigger aria-expanded="false" aria-controls="faq-a-5">
-                  <span class="faq__mark" aria-hidden="true"><i class="bi bi-truck"></i></span>
                   <span class="faq__text">ارسال سفارش به شهرستان چگونه است؟</span>
-                  <i class="bi bi-chevron-down faq__chevron" aria-hidden="true"></i>
+                  <span class="faq__toggle" aria-hidden="true">
+                    <i class="bi bi-plus-lg faq__toggle-plus"></i>
+                    <i class="bi bi-dash-lg faq__toggle-minus"></i>
+                  </span>
                 </button>
               </h3>
               <div class="faq__panel" id="faq-a-5" role="region" aria-labelledby="faq-q-5" aria-hidden="true" data-faq-panel>
@@ -670,9 +665,11 @@
             <article class="faq__item">
               <h3 class="faq__heading">
                 <button class="faq__question" type="button" id="faq-q-6" data-faq-trigger aria-expanded="false" aria-controls="faq-a-6">
-                  <span class="faq__mark" aria-hidden="true"><i class="bi bi-arrow-repeat"></i></span>
                   <span class="faq__text">شرایط مرجوعی کالا چیست؟</span>
-                  <i class="bi bi-chevron-down faq__chevron" aria-hidden="true"></i>
+                  <span class="faq__toggle" aria-hidden="true">
+                    <i class="bi bi-plus-lg faq__toggle-plus"></i>
+                    <i class="bi bi-dash-lg faq__toggle-minus"></i>
+                  </span>
                 </button>
               </h3>
               <div class="faq__panel" id="faq-a-6" role="region" aria-labelledby="faq-q-6" aria-hidden="true" data-faq-panel>
@@ -684,9 +681,11 @@
             <article class="faq__item">
               <h3 class="faq__heading">
                 <button class="faq__question" type="button" id="faq-q-7" data-faq-trigger aria-expanded="false" aria-controls="faq-a-7">
-                  <span class="faq__mark" aria-hidden="true"><i class="bi bi-car-front"></i></span>
                   <span class="faq__text">چطور از سازگاری قطعه با خودرو مطمئن شوم؟</span>
-                  <i class="bi bi-chevron-down faq__chevron" aria-hidden="true"></i>
+                  <span class="faq__toggle" aria-hidden="true">
+                    <i class="bi bi-plus-lg faq__toggle-plus"></i>
+                    <i class="bi bi-dash-lg faq__toggle-minus"></i>
+                  </span>
                 </button>
               </h3>
               <div class="faq__panel" id="faq-a-7" role="region" aria-labelledby="faq-q-7" aria-hidden="true" data-faq-panel>
