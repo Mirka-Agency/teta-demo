@@ -161,18 +161,22 @@ function discountMarkup(product) {
 
 function cardTemplate(product, options = {}) {
   const loading = options.eager ? "eager" : "lazy";
+  const variant = options.variant || "default";
+  const meta =
+    variant === "newest"
+      ? `<p class="product-card__code">کد محصول: ${product.code}</p>`
+      : `<p class="product-card__brand">برند: ${product.brand}</p>`;
+
   return `
     <article class="product-card">
       <div class="product-card__media">
         <img class="product-card__image" src="${product.image}" alt="${product.name}" width="400" height="300" decoding="async" loading="${loading}">
-        <span class="product-card__badge">${product.availability}</span>
         ${discountMarkup(product)}
       </div>
       <h3 class="product-card__title">${product.name}</h3>
-      <p class="product-card__vehicle">سازگاری: ${product.vehicle}</p>
-      <p class="product-card__brand">برند: ${product.brand}</p>
+      ${meta}
       ${pricingMarkup(product)}
-      <button type="button" class="primary-button product-card__cta" data-inquiry-product="${product.name}">استعلام خرید عمده</button>
+      <button type="button" class="primary-button product-card__cta" data-inquiry-product="${product.name}">استعلام خرید</button>
     </article>
   `;
 }
@@ -182,12 +186,22 @@ export function renderProductRails() {
 
   mounts.forEach((mount) => {
     const kind = mount.dataset.productRail;
-    const list = products.filter((item) => item[kind]);
+    let list = products.filter((item) => item[kind]);
+    const isGrid = mount.classList.contains("product-grid");
+    const variant = kind === "newest" ? "newest" : "featured";
+
+    if (kind === "newest" && isGrid) {
+      list = list.slice(0, 4);
+    }
+
     mount.innerHTML = list
-      .map(
-        (item) =>
-          `<div class="carousel__slide" data-carousel-slide>${cardTemplate(item, { eager: kind === "newest" })}</div>`
-      )
+      .map((item) => {
+        const card = cardTemplate(item, {
+          eager: kind === "newest" || kind === "featured",
+          variant,
+        });
+        return isGrid ? card : `<div class="carousel__slide" data-carousel-slide>${card}</div>`;
+      })
       .join("");
   });
 }
@@ -217,11 +231,12 @@ export function initProductSearch() {
       return !normalized || haystack.includes(normalized);
     });
     const source = filtered.length ? filtered : products;
+    const isGrid = rail.classList.contains("product-grid");
     rail.innerHTML = source
-      .map(
-        (item) =>
-          `<div class="carousel__slide" data-carousel-slide>${cardTemplate(item)}</div>`
-      )
+      .map((item) => {
+        const card = cardTemplate(item, { variant: "newest" });
+        return isGrid ? card : `<div class="carousel__slide" data-carousel-slide>${card}</div>`;
+      })
       .join("");
     const carousel = rail.closest("[data-carousel]");
     if (carousel) {

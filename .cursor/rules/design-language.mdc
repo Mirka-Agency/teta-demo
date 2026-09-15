@@ -12,15 +12,15 @@ Never hardcode brand hex in component CSS. Always use these variable names.
 
 ```css
 :root {
-  --color-primary: #0a105a;
-  --color-secondary: #5078a9;
-  --color-text: #091426;
-  --color-accent: #091426;
-  --color-muted: #3a414d;
+  --color-primary: #10145a;
+  --color-secondary: #557fb5;
+  --color-text: #1b2438;
+  --color-accent: #1b2438;
+  --color-muted: #4a5568;
   --color-white: #ffffff;
-  --color-bg: #f5f5f5;
-  --color-border: #dbdbdb;
-  --color-border-soft: #e1e1e1;
+  --color-bg: #f7f8fa;
+  --color-border: #e2e5eb;
+  --color-border-soft: #eceef2;
   --color-overlay: rgba(9, 20, 38, 0.55);
   --color-blur: rgba(80, 120, 169, 0.3);
   --color-glass: rgba(217, 217, 217, 0.16);
@@ -59,12 +59,10 @@ Type scale: hero 36–40px (`--font-size-hero`), section 24–28px (`--font-size
   --radius-md: 6px;
   --radius-lg: 8px;
   --radius-xl: 12px;
-  --shadow-card: 0 4px 18px rgba(9, 20, 38, 0.06);
-  --shadow-header: 0 2px 12px rgba(9, 20, 38, 0.04);
+  --shadow-card: 0 2px 10px rgba(27, 36, 56, 0.04);
+  --shadow-header: none;
 }
 ```
-
-Buttons: `--radius-md`. Cards and inputs: `--radius-lg` or `--radius-xl`. Product cards: `--radius-xl`.
 
 ## Layout
 
@@ -72,7 +70,7 @@ Buttons: `--radius-md`. Cards and inputs: `--radius-lg` or `--radius-xl`. Produc
 :root {
   --container-max: 1344px;
   --space-section: 3rem;
-  --header-height: 78px;
+  --header-height: 80px;
 }
 ```
 
