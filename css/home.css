@@ -163,6 +163,10 @@
   color: var(--color-white);
 }
 
+.hero-slider__btn i {
+  font-size: 1rem;
+}
+
 /* Product search */
 .product-search {
   margin-block-start: -0.25rem;
@@ -179,8 +183,6 @@
   border-radius: var(--radius-lg);
   padding: 1.15rem;
   box-shadow: var(--shadow-card);
-  --select-icon-size: 16px;
-  --select-icon-pad: 1rem;
 }
 
 .product-search__title {
@@ -224,34 +226,14 @@
   position: relative;
 }
 
-.field-select__control::before {
-  content: "";
-  position: absolute;
-  inset-inline-start: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: var(--select-icon-size);
-  height: var(--select-icon-size);
-  margin-inline-start: 0.85rem;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  border-inline-end: 1px solid var(--color-border-soft);
-  padding-inline-end: 0.75rem;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.field-select--type .field-select__control::before {
-  background-image: url("../assets/icons/search-1.svg");
-}
-
-.field-select--model .field-select__control::before {
-  background-image: url("../assets/icons/search-3.svg");
-}
-
-.field-select--part .field-select__control::before {
-  background-image: url("../assets/icons/search-2.svg");
+.field-select__icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 1.25rem;
+  color: var(--color-primary);
+  font-size: 1.05rem;
+  line-height: 1;
 }
 
 .field-select__native {
@@ -276,7 +258,7 @@
   width: 100%;
   min-height: 48px;
   padding-block: 0.7rem;
-  padding-inline: 3rem 0.85rem;
+  padding-inline: 0.85rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   background: var(--color-white);
@@ -318,20 +300,17 @@
   display: grid;
   place-items: center;
   flex-shrink: 0;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: var(--color-surface-tint);
-  color: var(--color-secondary);
-  font-size: 0.75rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--color-muted);
+  font-size: 0.85rem;
   line-height: 1;
-  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .field-select.is-open .field-select__chevron {
   transform: rotate(180deg);
-  background: var(--color-secondary);
-  color: var(--color-white);
+  color: var(--color-primary);
 }
 
 .field-select__list {
@@ -495,6 +474,10 @@
 .carousel__btn:hover {
   background: var(--color-secondary);
   color: var(--color-white);
+}
+
+.carousel__btn i {
+  font-size: 1rem;
 }
 
 /* POWER / SPEED tilted band */
@@ -809,7 +792,6 @@
   .product-search__panel {
     grid-template-columns: auto 1fr;
     align-items: end;
-    --select-icon-size: 16px;
   }
 
   .product-search__fields {
@@ -956,8 +938,6 @@
   }
 
   .product-search__panel {
-    --select-icon-size: 20px;
-    --select-icon-pad: 1.375rem;
     padding: 1.15rem 1.25rem;
   }
 

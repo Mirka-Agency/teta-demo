@@ -132,6 +132,11 @@
   cursor: pointer;
 }
 
+.site-header__menu-toggle i {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
 .site-nav {
   display: none;
 }
@@ -912,7 +917,12 @@
   background: var(--color-white);
   color: var(--color-primary);
   flex-shrink: 0;
-  font-size: 1.35rem;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.section-head__icon i {
+  font-size: inherit;
   line-height: 1;
 }
 
@@ -1155,8 +1165,8 @@
   height: 48px;
   border-radius: var(--radius-lg);
   background: var(--color-white);
-  color: var(--color-secondary);
-  font-size: 1.25rem;
+  color: var(--color-primary);
+  font-size: 1.35rem;
   line-height: 1;
 }
 
@@ -1324,8 +1334,8 @@
   display: grid;
   place-items: center;
   background: var(--color-bg);
-  color: var(--color-secondary);
-  font-size: 0.95rem;
+  color: var(--color-primary);
+  font-size: 1.05rem;
 }
 
 .social-links a:hover,

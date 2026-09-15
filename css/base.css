@@ -30,6 +30,13 @@ a {
   font-family: var(--font-family-heading);
 }
 
+i.bi {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
 button,
 input,
 select,

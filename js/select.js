@@ -52,12 +52,22 @@ export function initCustomSelects() {
       value.classList.add("is-placeholder");
     }
 
+    const prefix = document.createElement("span");
+    prefix.className = "field-select__icon";
+    prefix.setAttribute("aria-hidden", "true");
+    const iconName = field?.classList.contains("field-select--type")
+      ? "bi-car-front"
+      : field?.classList.contains("field-select--model")
+        ? "bi-layers"
+        : "bi-gear-wide-connected";
+    prefix.innerHTML = `<i class="bi ${iconName}"></i>`;
+
     const chevron = document.createElement("span");
     chevron.className = "field-select__chevron";
     chevron.setAttribute("aria-hidden", "true");
     chevron.innerHTML = '<i class="bi bi-chevron-down"></i>';
 
-    trigger.append(value, chevron);
+    trigger.append(prefix, value, chevron);
 
     const list = document.createElement("ul");
     list.className = "field-select__list";
