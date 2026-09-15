@@ -642,23 +642,22 @@
 }
 
 .category-banner {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 1fr;
   overflow: hidden;
-  height: 200px;
-  padding: 1.25rem;
+  min-height: 0;
+  background: var(--color-white);
+  border: 1px solid var(--color-border-soft);
   border-radius: var(--radius-xl);
-  color: var(--color-white);
+  box-shadow: var(--shadow-card);
+  color: var(--color-primary);
   text-decoration: none;
-  background: var(--color-primary);
 }
 
 .category-banner:hover,
 .category-banner:focus-visible {
-  color: var(--color-white);
+  color: var(--color-primary);
+  border-color: var(--color-border);
 }
 
 .category-banner:focus-visible {
@@ -666,84 +665,68 @@
   outline-offset: 2px;
 }
 
-.category-banner__image {
-  position: absolute;
-  z-index: 0;
-  inset-block: auto 0;
-  inset-inline-end: 0;
-  inset-inline-start: auto;
-  width: 70%;
-  height: 88%;
-  object-fit: cover;
-  object-position: center 72%;
-  pointer-events: none;
-  mix-blend-mode: lighten;
-}
-
-.category-banner--foreign .category-banner__image {
-  object-position: 48% 70%;
-}
-
-.category-banner--iranian .category-banner__image {
-  object-position: 38% 62%;
-}
-
-.category-banner__overlay {
-  position: absolute;
-  z-index: 1;
-  inset: 0;
-  pointer-events: none;
-  background:
-    linear-gradient(
-      to top,
-      var(--color-primary) 0%,
-      color-mix(in srgb, var(--color-primary) 78%, transparent) 38%,
-      transparent 72%
-    ),
-    linear-gradient(
-      to inline-end,
-      var(--color-primary) 0%,
-      color-mix(in srgb, var(--color-primary) 88%, transparent) 34%,
-      color-mix(in srgb, var(--color-primary) 28%, transparent) 58%,
-      transparent 78%
-    );
-}
-
-.category-banner__content {
-  position: relative;
-  z-index: 2;
+.category-banner__copy {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   align-items: flex-start;
-  gap: 0.75rem;
-  width: min(100%, 15.5rem);
-  min-height: 6.25rem;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 1.15rem 1.2rem 1rem;
+}
+
+.category-banner__label {
+  color: var(--color-secondary);
+  font-size: var(--font-size-meta);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.4;
 }
 
 .category-banner__title {
   margin: 0;
-  max-width: 100%;
-  color: var(--color-white);
+  color: var(--color-primary);
   font-size: var(--font-size-card);
   font-weight: var(--font-weight-bold);
-  line-height: 1.6;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.5;
 }
 
 .category-banner__cta {
-  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
   min-height: 44px;
-  padding-inline: 1rem;
-  pointer-events: none;
+  color: var(--color-secondary);
+  font-size: var(--font-size-button);
+  font-weight: var(--font-weight-medium);
+  line-height: 1;
 }
 
 .category-banner:hover .category-banner__cta,
 .category-banner:focus-visible .category-banner__cta {
-  background-color: var(--color-white);
   color: var(--color-primary);
+}
+
+.category-banner__media {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 10rem;
+  background: var(--color-primary);
+  overflow: hidden;
+}
+
+.category-banner__image {
+  display: block;
+  width: 100%;
+  height: 10rem;
+  object-fit: contain;
+  object-position: center bottom;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+
+.category-banner:hover .category-banner__image,
+.category-banner:focus-visible .category-banner__image {
+  transform: scale(1.04);
 }
 
 /* Media cards */
@@ -1363,8 +1346,18 @@
     grid-column: 1 / -1;
   }
 
-  .category-banner {
-    height: 220px;
+  .category-banner__copy {
+    padding: 1.25rem 1.3rem 1rem;
+  }
+
+  .category-banner__title {
+    font-size: 1.125rem;
+  }
+
+  .category-banner__media,
+  .category-banner__image {
+    min-height: 11rem;
+    height: 11rem;
   }
 }
 
@@ -1382,6 +1375,23 @@
   }
 
   .category-banner {
-    height: 250px;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.15fr);
+    min-height: 13rem;
+  }
+
+  .category-banner__copy {
+    padding: 1.5rem 1.5rem;
+    gap: 0.55rem;
+  }
+
+  .category-banner__title {
+    font-size: var(--font-size-section);
+    line-height: 1.4;
+  }
+
+  .category-banner__media,
+  .category-banner__image {
+    height: 100%;
+    min-height: 13rem;
   }
 }
