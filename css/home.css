@@ -114,12 +114,20 @@
 }
 
 .hero-slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  min-height: 0;
+}
+
+.hero-slider__stage {
   position: relative;
-  min-height: 240px;
+  width: 100%;
 }
 
 .hero-slider__track {
-  position: relative;
+  width: 100%;
 }
 
 .hero-slide {
@@ -140,31 +148,87 @@
 
 .hero-slider__nav {
   position: absolute;
-  inset-block-end: 0.5rem;
-  inset-inline-end: 0;
+  inset: 0;
+  z-index: 2;
   display: flex;
-  gap: 0.4rem;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
 }
 
 .hero-slider__btn {
-  width: 36px;
-  height: 36px;
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
   border: 1px solid var(--color-border-soft);
   border-radius: var(--radius-md);
   background: var(--color-white);
-  color: var(--color-text);
+  color: var(--color-primary);
   cursor: pointer;
   box-shadow: var(--shadow-card);
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-.hero-slider__btn:hover {
+.hero-slider__btn:hover,
+.hero-slider__btn:focus-visible {
   background: var(--color-primary);
   border-color: var(--color-primary);
   color: var(--color-white);
 }
 
+.hero-slider__btn:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 3px;
+}
+
 .hero-slider__btn i {
-  font-size: 1rem;
+  font-size: 1.05rem;
+}
+
+.hero-slider__dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+}
+
+.hero-slider__dot {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.hero-slider__dot::after {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 1px;
+  background: var(--color-border);
+  transition: width 0.2s ease, background-color 0.2s ease;
+}
+
+.hero-slider__dot.is-active::after {
+  width: 1.25rem;
+  background: var(--color-primary);
+}
+
+.hero-slider__dot:hover::after,
+.hero-slider__dot:focus-visible::after {
+  background: var(--color-secondary);
+}
+
+.hero-slider__dot:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
 }
 
 /* Product search */

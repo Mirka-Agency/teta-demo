@@ -100,16 +100,77 @@ export function initHeroSlider() {
   const slides = [...root.querySelectorAll("[data-hero-slide]")];
   const prev = root.querySelector("[data-hero-prev]");
   const next = root.querySelector("[data-hero-next]");
+  const dotsRoot = root.querySelector("[data-hero-dots]");
   let index = 0;
+  let timer = null;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const digits = "۰۱۲۳۴۵۶۷۸۹";
+  const toPersian = (value) => String(value).replace(/\d/g, (digit) => digits[digit]);
+
+  const renderDots = () => {
+    if (!dotsRoot) {
+      return;
+    }
+
+    dotsRoot.innerHTML = slides
+      .map((_, i) => {
+        const current = i === index;
+        return `<button class="hero-slider__dot${current ? " is-active" : ""}" type="button" role="tab" aria-selected="${current}" aria-label="اسلاید ${toPersian(i + 1)}" data-hero-dot="${i}"></button>`;
+      })
+      .join("");
+  };
 
   const show = (nextIndex) => {
     index = (nextIndex + slides.length) % slides.length;
     slides.forEach((slide, i) => {
       slide.classList.toggle("is-active", i === index);
     });
+    renderDots();
   };
 
-  prev?.addEventListener("click", () => show(index - 1));
-  next?.addEventListener("click", () => show(index + 1));
-  window.setInterval(() => show(index + 1), 5000);
+  const stop = () => {
+    if (timer) {
+      window.clearInterval(timer);
+      timer = null;
+    }
+  };
+
+  const start = () => {
+    if (reduceMotion || slides.length < 2) {
+      return;
+    }
+    stop();
+    timer = window.setInterval(() => show(index + 1), 6000);
+  };
+
+  prev?.addEventListener("click", () => {
+    show(index - 1);
+    start();
+  });
+  next?.addEventListener("click", () => {
+    show(index + 1);
+    start();
+  });
+
+  dotsRoot?.addEventListener("click", (event) => {
+    const dot = event.target.closest("[data-hero-dot]");
+    if (!dot) {
+      return;
+    }
+    show(Number(dot.dataset.heroDot));
+    start();
+  });
+
+  root.addEventListener("mouseenter", stop);
+  root.addEventListener("mouseleave", start);
+  root.addEventListener("focusin", stop);
+  root.addEventListener("focusout", (event) => {
+    if (!root.contains(event.relatedTarget)) {
+      start();
+    }
+  });
+
+  renderDots();
+  start();
 }
