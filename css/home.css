@@ -1,3 +1,11 @@
+body {
+  --container-max: var(--container-content);
+}
+
+#content {
+  --container-max: var(--container-content);
+}
+
 /* Hero */
 .hero {
   padding-block: 2.5rem 2rem;

@@ -68,7 +68,7 @@ Type scale: hero 36–40px (`--font-size-hero`), section 24–28px (`--font-size
 
 ```css
 :root {
-  --container-max: 1344px;
+  --container-max: 1200px;
   --space-section: 3rem;
   --header-height: 80px;
 }

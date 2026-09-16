@@ -7,7 +7,7 @@ import {
 } from "./products.js";
 import { initFaq } from "./faq.js";
 import { initCustomSelects } from "./select.js";
-import { initBlogArchive } from "./blog.js";
+import { initBlogArchive, initBlogSingle } from "./blog.js";
 
 function pad(value) {
   return String(value).padStart(2, "0");
@@ -89,4 +89,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initFaq();
   initCustomSelects();
   initBlogArchive();
+  initBlogSingle();
 });
