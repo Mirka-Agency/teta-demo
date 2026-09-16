@@ -220,7 +220,6 @@ export function bindProductCtas() {
 }
 
 export function initProductSearch() {
-  const form = document.querySelector("[data-product-search]");
   const rail = document.querySelector('[data-product-rail="newest"]');
   const section = document.querySelector("#products");
 
@@ -247,16 +246,6 @@ export function initProductSearch() {
       refreshCarousels();
     }
   };
-
-  form?.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const data = new FormData(form);
-    const query = [data.get("vehicleType"), data.get("vehicleModel"), data.get("part")]
-      .filter(Boolean)
-      .join(" ");
-    applyFilter(query);
-    section?.scrollIntoView({ behavior: "smooth" });
-  });
 
   section?.addEventListener("teta:search", (event) => {
     applyFilter(event.detail?.query || "");

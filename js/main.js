@@ -6,7 +6,6 @@ import {
   initProductSearch,
 } from "./products.js";
 import { initFaq } from "./faq.js";
-import { initCustomSelects } from "./select.js";
 import { initBlogArchive, initBlogSingle } from "./blog.js";
 
 function pad(value) {
@@ -87,7 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initCountdown();
   initNavHighlight();
   initFaq();
-  initCustomSelects();
   initBlogArchive();
   initBlogSingle();
 });
