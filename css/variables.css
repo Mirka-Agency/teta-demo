@@ -39,8 +39,8 @@
   --shadow-card: 0 2px 10px rgba(27, 36, 56, 0.04);
   --shadow-header: none;
 
-  --container-max: 1200px;
-  --container-content: 960px;
+  --container-content: 1000px;
+  --container-max: var(--container-content);
   --space-section: 2.25rem;
   --header-height: 80px;
 }
