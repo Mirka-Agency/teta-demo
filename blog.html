@@ -141,21 +141,38 @@
           <div class="blog-archive__layout">
             <div class="blog-archive__main" data-blog-main>
               <div class="blog-toolbar">
-                <div class="blog-filters" role="group" aria-label="فیلتر موضوع مقالات">
-                  <button class="blog-filters__chip is-active" type="button" data-blog-filter="all" aria-pressed="true">همه</button>
-                  <button class="blog-filters__chip" type="button" data-blog-filter="راهنمای خرید" aria-pressed="false">راهنمای خرید</button>
-                  <button class="blog-filters__chip" type="button" data-blog-filter="نگهداری خودرو" aria-pressed="false">نگهداری خودرو</button>
-                  <button class="blog-filters__chip" type="button" data-blog-filter="سیستم کولر" aria-pressed="false">سیستم کولر</button>
-                  <button class="blog-filters__chip" type="button" data-blog-filter="قطعات بخاری" aria-pressed="false">قطعات بخاری</button>
-                </div>
                 <form class="blog-search" data-blog-search>
                   <label class="visually-hidden" for="blog-search">جستجوی مقاله</label>
-                  <input class="blog-search__input" id="blog-search" type="search" name="q" placeholder="جستجوی عنوان مقاله">
-                  <button class="primary-button" type="submit">
-                    جستجو
+                  <div class="blog-search__field">
                     <i class="bi bi-search" aria-hidden="true"></i>
-                  </button>
+                    <input class="blog-search__input" id="blog-search" type="search" name="q" placeholder="عنوان مقاله را بنویسید">
+                    <button class="blog-search__submit" type="submit">
+                      جستجو
+                    </button>
+                  </div>
                 </form>
+                <div class="blog-filters" role="group" aria-label="فیلتر موضوع مقالات">
+                  <button class="blog-filters__chip is-active" type="button" data-blog-filter="all" aria-pressed="true">
+                    <i class="bi bi-grid" aria-hidden="true"></i>
+                    همه
+                  </button>
+                  <button class="blog-filters__chip" type="button" data-blog-filter="راهنمای خرید" aria-pressed="false">
+                    <i class="bi bi-bag-check" aria-hidden="true"></i>
+                    راهنمای خرید
+                  </button>
+                  <button class="blog-filters__chip" type="button" data-blog-filter="نگهداری خودرو" aria-pressed="false">
+                    <i class="bi bi-tools" aria-hidden="true"></i>
+                    نگهداری خودرو
+                  </button>
+                  <button class="blog-filters__chip" type="button" data-blog-filter="سیستم کولر" aria-pressed="false">
+                    <i class="bi bi-snow" aria-hidden="true"></i>
+                    سیستم کولر
+                  </button>
+                  <button class="blog-filters__chip" type="button" data-blog-filter="قطعات بخاری" aria-pressed="false">
+                    <i class="bi bi-thermometer-sun" aria-hidden="true"></i>
+                    قطعات بخاری
+                  </button>
+                </div>
               </div>
               <p class="blog-archive__count" data-blog-count aria-live="polite"></p>
               <div class="blog-archive__featured" data-blog-featured></div>
