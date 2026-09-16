@@ -1,86 +1,166 @@
 /* Buttons */
 .primary-button,
 .ghost-button,
+.hero-button,
 .icon-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.375rem;
-  border: 0;
+  gap: 0.45rem;
+  border: 1px solid transparent;
   cursor: pointer;
   font-family: var(--font-family-heading);
-  transition: background-color 0.25s ease, color 0.25s ease, fill 0.25s ease;
+  font-size: var(--font-size-button);
+  font-weight: var(--font-weight-medium);
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.primary-button,
+.ghost-button,
+.hero-button {
+  min-height: 44px;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-md);
+}
+
+.primary-button i,
+.ghost-button i,
+.hero-button i {
+  font-size: 1rem;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.primary-button:hover,
+.ghost-button:hover,
+.hero-button:hover {
+  transform: translateY(-1px);
+}
+
+.primary-button:active,
+.ghost-button:active,
+.hero-button:active {
+  transform: translateY(0);
+}
+
+.primary-button:focus-visible,
+.ghost-button:focus-visible,
+.hero-button:focus-visible,
+.icon-button:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 3px;
 }
 
 .primary-button {
   background-color: var(--color-secondary);
   color: var(--color-white);
-  border-radius: var(--radius-md);
-  padding: 0.625rem 0.75rem;
-  font-size: var(--font-size-button);
-  font-weight: var(--font-weight-medium);
-  line-height: 1.25rem;
+  border-color: var(--color-secondary);
 }
 
 .primary-button:hover,
 .primary-button:focus-visible {
   background-color: var(--color-primary);
+  border-color: var(--color-primary);
   color: var(--color-white);
 }
 
-.primary-button svg {
-  fill: currentColor;
+.primary-button--navy,
+.hero-button--primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
 }
 
-.ghost-button {
+.primary-button--navy:hover,
+.primary-button--navy:focus-visible,
+.hero-button--primary:hover,
+.hero-button--primary:focus-visible {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+.primary-button--inverse {
   background-color: var(--color-white);
-  color: var(--color-text);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  padding: 0.375rem 0.5rem;
-  font-size: var(--font-size-button);
-  font-weight: var(--font-weight-medium);
+  border-color: var(--color-white);
+  color: var(--color-primary);
+}
+
+.primary-button--inverse:hover,
+.primary-button--inverse:focus-visible {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.ghost-button,
+.hero-button--ghost {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-border);
 }
 
 .ghost-button:hover,
-.ghost-button:focus-visible {
-  background-color: var(--color-secondary);
-  color: var(--color-white);
+.ghost-button:focus-visible,
+.hero-button--ghost:hover,
+.hero-button--ghost:focus-visible {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border-color: var(--color-secondary);
 }
 
-.ghost-button svg,
-.icon-button svg {
-  fill: currentColor;
+.primary-button:hover .bi-arrow-left,
+.primary-button:hover .bi-chevron-left,
+.hero-button:hover .bi-arrow-left,
+.hero-button:hover .bi-chevron-left,
+.primary-button:focus-visible .bi-arrow-left,
+.hero-button:focus-visible .bi-arrow-left {
+  transform: translateX(-3px);
 }
 
 .icon-button {
   background-color: var(--color-white);
   color: var(--color-text);
-  border-radius: var(--radius-sm);
-  padding: 0.375rem;
-  min-width: 36px;
-  min-height: 36px;
+  border-radius: var(--radius-md);
+  padding: 0;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 .icon-button:hover,
 .icon-button:focus-visible {
   background-color: var(--color-secondary);
   color: var(--color-white);
+  transform: none;
+}
+
+.mobile-nav .primary-button {
+  width: 100%;
+  margin-block-start: 0.5rem;
 }
 
 @media (min-width: 768px) {
-  .primary-button {
-    padding: 0.625rem 0.75rem;
+  .primary-button,
+  .ghost-button,
+  .hero-button {
+    min-height: 48px;
+    padding: 0.75rem 1.4rem;
   }
 }
 
 @media (min-width: 1024px) {
-  .primary-button {
-    padding: 0.75rem 1rem 0.625rem;
-  }
-
-  .ghost-button {
-    padding: 0.6875rem 0.625rem;
+  .primary-button,
+  .ghost-button,
+  .hero-button {
+    padding: 0.8rem 1.5rem;
   }
 }
 
@@ -392,10 +472,18 @@
 
 .search-modal__form {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 0.5rem;
   background: var(--color-bg);
   border-radius: var(--radius-lg);
-  padding: 0.25rem;
+  padding: 0.35rem;
+}
+
+.search-modal__form .primary-button,
+.search-modal__form .ghost-button {
+  min-height: 44px;
+  padding-inline: 1rem;
 }
 
 .search-modal__input {
@@ -571,10 +659,6 @@
 
 .product-card__cta {
   width: 100%;
-  min-height: 44px;
-  padding-block: 0.7rem;
-  font-size: var(--font-size-button);
-  font-weight: var(--font-weight-medium);
 }
 
 .product-grid {
@@ -703,6 +787,18 @@
 .category-banner:hover .category-banner__cta,
 .category-banner:focus-visible .category-banner__cta {
   color: var(--color-primary);
+}
+
+.category-banner__cta i,
+.media-card__cta i {
+  transition: transform 0.2s ease;
+}
+
+.category-banner:hover .category-banner__cta i,
+.category-banner:focus-visible .category-banner__cta i,
+.media-card__link:hover .media-card__cta i,
+.media-card__link:focus-visible .media-card__cta i {
+  transform: translateX(-3px);
 }
 
 .category-banner__media {
@@ -1309,16 +1405,17 @@
 }
 
 .social-links a {
-  width: 36px;
-  height: 36px;
-  min-width: 36px;
-  min-height: 36px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
   border-radius: var(--radius-md);
   display: grid;
   place-items: center;
   background: var(--color-bg);
   color: var(--color-primary);
   font-size: 1.05rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .social-links a:hover,

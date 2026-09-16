@@ -176,7 +176,10 @@ function cardTemplate(product, options = {}) {
       <h3 class="product-card__title">${product.name}</h3>
       ${meta}
       ${pricingMarkup(product)}
-      <button type="button" class="primary-button product-card__cta" data-inquiry-product="${product.name}">استعلام خرید</button>
+      <button type="button" class="primary-button product-card__cta" data-inquiry-product="${product.name}">
+        استعلام خرید
+        <i class="bi bi-arrow-left" aria-hidden="true"></i>
+      </button>
     </article>
   `;
 }
