@@ -7,6 +7,7 @@ import {
 } from "./products.js";
 import { initFaq } from "./faq.js";
 import { initCustomSelects } from "./select.js";
+import { initBlogArchive } from "./blog.js";
 
 function pad(value) {
   return String(value).padStart(2, "0");
@@ -39,23 +40,36 @@ function initCountdown() {
 
 function initNavHighlight() {
   const links = document.querySelectorAll(".site-nav__link");
-  const sections = [...links]
-    .map((link) => document.querySelector(link.getAttribute("href")))
+  const items = [...links]
+    .map((link) => {
+      const href = link.getAttribute("href") || "";
+      const hash = href.includes("#") ? `#${href.split("#")[1]}` : "";
+      if (!hash || hash === "#") {
+        return null;
+      }
+      const section = document.querySelector(hash);
+      return section ? { link, section } : null;
+    })
     .filter(Boolean);
+
+  if (!items.length) {
+    return;
+  }
 
   const onScroll = () => {
     const y = window.scrollY + 120;
-    let current = sections[0];
-    sections.forEach((section) => {
-      if (section.offsetTop <= y) {
-        current = section;
-      }
-    });
+    const visible = items.filter((item) => item.section.offsetTop <= y);
+    const current = visible.reduce((best, item) => {
+      return item.section.offsetTop >= best.section.offsetTop ? item : best;
+    }, visible[0] || items[0]);
+
     links.forEach((link) => {
-      link.classList.toggle(
-        "is-active",
-        link.getAttribute("href") === `#${current.id}`
-      );
+      const href = link.getAttribute("href") || "";
+      if (!href.includes("#")) {
+        return;
+      }
+      const hash = `#${href.split("#")[1]}`;
+      link.classList.toggle("is-active", hash === `#${current.section.id}`);
     });
   };
 
@@ -74,4 +88,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initNavHighlight();
   initFaq();
   initCustomSelects();
+  initBlogArchive();
 });

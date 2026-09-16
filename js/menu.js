@@ -69,9 +69,15 @@ export function initSearchModal() {
     const query = input?.value.trim();
     setOpen(false);
     const products = document.querySelector("#products");
-    products?.scrollIntoView({ behavior: "smooth" });
-    products?.dispatchEvent(
-      new CustomEvent("teta:search", { detail: { query } })
-    );
+    if (products) {
+      products.scrollIntoView({ behavior: "smooth" });
+      products.dispatchEvent(
+        new CustomEvent("teta:search", { detail: { query } })
+      );
+      return;
+    }
+    const target = new URL("index.html", window.location.href);
+    target.hash = "products";
+    window.location.assign(target.href);
   });
 }

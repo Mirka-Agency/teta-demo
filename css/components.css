@@ -966,6 +966,23 @@
   color: var(--color-primary);
 }
 
+.media-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .media-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .media-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 /* Section heading bar */
 .section-head {
   display: flex;
@@ -1019,6 +1036,35 @@
 
 .section-head--light .section-head__icon {
   background: var(--color-bg);
+}
+
+.section-head__more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  min-height: 44px;
+  color: var(--color-secondary);
+  font-size: var(--font-size-button);
+  font-weight: var(--font-weight-medium);
+}
+
+.section-head__more:hover,
+.section-head__more:focus-visible {
+  color: var(--color-primary);
+}
+
+.section-head__more:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 3px;
+}
+
+.section-head__more i {
+  transition: transform 0.2s ease;
+}
+
+.section-head__more:hover i,
+.section-head__more:focus-visible i {
+  transform: translateX(-3px);
 }
 
 /* FAQ accordion */
